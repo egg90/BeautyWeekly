@@ -1,42 +1,93 @@
-﻿using System;
-using System.Linq;
-using System.Collections.Generic;
-
-using SimpleMvvmToolkit;
+﻿//-----------------------------------------------------------------------
+// <copyright file="Customer.cs" company="Eggfly Corporation">
+//     Copyright (c) Xiaomi Corporation. All rights reserved.
+// </copyright>
+// <author>lihaohua90@gmail.com</author>
+//-----------------------------------------------------------------------
 
 namespace BeautyWeekly
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using SimpleMvvmToolkit;
+
+    /// <summary>
+    /// Customer Model
+    /// </summary>
     public class Customer : ModelBase<Customer>
     {
+        /// <summary>
+        /// Customer id
+        /// </summary>
         private int customerId;
+
+        /// <summary>
+        /// Customer name
+        /// </summary>
+        private string customerName;
+
+        /// <summary>
+        /// city string
+        /// </summary>
+        private string city;
+
+        /// <summary>
+        /// Gets or sets the customer id.
+        /// </summary>
+        /// <value>
+        /// The customer id.
+        /// </value>
         public int CustomerId
         {
-            get { return customerId; }
+            get
+            {
+                return this.customerId;
+            }
+
             set
             {
-                customerId = value;
+                this.customerId = value;
                 NotifyPropertyChanged(m => m.CustomerId);
             }
         }
 
-        private string customerName;
+        /// <summary>
+        /// Gets or sets the name of the customer.
+        /// </summary>
+        /// <value>
+        /// The name of the customer.
+        /// </value>
         public string CustomerName
         {
-            get { return customerName; }
+            get
+            {
+                return this.customerName;
+            }
+
             set
             {
-                customerName = value;
+                this.customerName = value;
                 NotifyPropertyChanged(m => m.CustomerName);
             }
         }
 
-        private string city;
+        /// <summary>
+        /// Gets or sets the city.
+        /// </summary>
+        /// <value>
+        /// The city.
+        /// </value>
         public string City
         {
-            get { return city; }
+            get
+            {
+                return this.city;
+            }
+
             set
             {
-                city = value;
+                this.city = value;
                 NotifyPropertyChanged(m => m.City);
             }
         }

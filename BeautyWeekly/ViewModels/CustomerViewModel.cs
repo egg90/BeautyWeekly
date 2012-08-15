@@ -1,17 +1,20 @@
-﻿using System;
-using System.Windows;
-using System.Windows.Input;
-using System.Threading;
-using System.Collections.ObjectModel;
-
-// Toolkit namespace
-using SimpleMvvmToolkit;
-
-// Toolkit extension methods
-using SimpleMvvmToolkit.ModelExtensions;
+﻿//-----------------------------------------------------------------------
+// <copyright file="CustomerViewModel.cs" company="Eggfly Corporation">
+//     Copyright (c) Xiaomi Corporation. All rights reserved.
+// </copyright>
+// <author>lihaohua90@gmail.com</author>
+//-----------------------------------------------------------------------
 
 namespace BeautyWeekly
 {
+    using System;
+    using System.Collections.ObjectModel;
+    using System.Threading;
+    using System.Windows;
+    using System.Windows.Input;
+    using SimpleMvvmToolkit;
+    using SimpleMvvmToolkit.ModelExtensions;
+
     /// <summary>
     /// This class extends ViewModelDetailBase which implements IEditableDataObject.
     /// <para>
@@ -26,13 +29,23 @@ namespace BeautyWeekly
     {
         #region Initialization and Cleanup
 
-        // Add a member for ICustomerServiceAgent
+        /// <summary>
+        /// Service agent
+        /// Add a member for ICustomerServiceAgent
+        /// </summary>
         private ICustomerServiceAgent serviceAgent;
 
-        // Default ctor
-        public CustomerViewModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomerViewModel"/> class.
+        /// </summary>
+        public CustomerViewModel()
+        {
+        }
 
-        // Ctor that accepts ICustomerServiceAgent
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomerViewModel"/> class.
+        /// </summary>
+        /// <param name="serviceAgent">The service agent.</param>
         public CustomerViewModel(ICustomerServiceAgent serviceAgent)
         {
             this.serviceAgent = serviceAgent;
@@ -42,7 +55,10 @@ namespace BeautyWeekly
 
         #region Notifications
 
-        // Add events to notify the view or obtain data from the view
+        /// <summary>
+        /// Occurs when [error notice].
+        /// Add events to notify the view or obtain data from the view
+        /// </summary>
         public event EventHandler<NotificationEventArgs<Exception>> ErrorNotice;
 
         #endregion
@@ -51,24 +67,30 @@ namespace BeautyWeekly
 
         #endregion
 
-        #region Methods
-
-        // Set the model to a new customer
-        public void NewCustomer()
-        {
-            base.Model = serviceAgent.CreateCustomer();
-        }
-
-        #endregion
-
         #region Commands
 
+        /// <summary>
+        /// Gets the new customer command.
+        /// </summary>
         public ICommand NewCustomerCommand
         {
             get
             {
-                return new DelegateCommand(NewCustomer);
+                return new DelegateCommand(this.NewCustomer);
             }
+        }
+
+        #endregion
+
+        #region Methods
+
+        /// <summary>
+        /// News the customer.
+        /// Set the model to a new customer
+        /// </summary>
+        public void NewCustomer()
+        {
+            this.Model = this.serviceAgent.CreateCustomer();
         }
 
         #endregion
@@ -79,11 +101,15 @@ namespace BeautyWeekly
 
         #region Helpers
 
-        // Helper method to notify View of an error
+        /// <summary>
+        /// Notifies the error.
+        /// </summary>
+        /// <param name="message">The message.</param>
+        /// <param name="error">The error.</param>
         private void NotifyError(string message, Exception error)
         {
             // Notify view of an error
-            Notify(ErrorNotice, new NotificationEventArgs<Exception>(message, error));
+            this.Notify(this.ErrorNotice, new NotificationEventArgs<Exception>(message, error));
         }
 
         #endregion

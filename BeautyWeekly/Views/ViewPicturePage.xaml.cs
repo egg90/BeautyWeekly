@@ -1,11 +1,11 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="CustomerView.xaml.cs" company="Eggfly Corporation">
+// <copyright file="ViewPicturePage.xaml.cs" company="Eggfly Corporation">
 //     Copyright (c) Xiaomi Corporation. All rights reserved.
 // </copyright>
 // <author>lihaohua90@gmail.com</author>
 //-----------------------------------------------------------------------
 
-namespace BeautyWeekly
+namespace BeautyWeekly.Views
 {
     using System;
     using System.Collections.Generic;
@@ -18,16 +18,17 @@ namespace BeautyWeekly
     using System.Windows.Media;
     using System.Windows.Media.Animation;
     using System.Windows.Shapes;
+    using Microsoft.Phone.Controls;
 
     /// <summary>
-    /// CustomerView page
+    /// ViewPicture Page
     /// </summary>
-    public partial class CustomerView : UserControl
+    public partial class ViewPicturePage : PhoneApplicationPage
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomerView"/> class.
+        /// Initializes a new instance of the <see cref="ViewPicturePage"/> class.
         /// </summary>
-        public CustomerView()
+        public ViewPicturePage()
         {
             InitializeComponent();
         }

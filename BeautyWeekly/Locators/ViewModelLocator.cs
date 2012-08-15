@@ -1,4 +1,11 @@
-﻿/*
+﻿//-----------------------------------------------------------------------
+// <copyright file="ViewModelLocator.cs" company="Eggfly Corporation">
+//     Copyright (c) Xiaomi Corporation. All rights reserved.
+// </copyright>
+// <author>lihaohua90@gmail.com</author>
+//-----------------------------------------------------------------------
+
+/*
   In App.xaml:
   <Application.Resources>
       <vm:ViewModelLocator xmlns:vm="clr-namespace:BeautyWeekly"
@@ -9,16 +16,14 @@
   DataContext="{Binding Source={StaticResource Locator}, Path=ViewModelName}"
 */
 
-using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-
-// Toolkit namespace
-using SimpleMvvmToolkit;
-
 namespace BeautyWeekly
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.Linq;
+    using SimpleMvvmToolkit;
+
     /// <summary>
     /// This class creates ViewModels on demand for Views, supplying a
     /// ServiceAgent to the ViewModel if required.
@@ -44,13 +49,17 @@ namespace BeautyWeekly
     /// </summary>
     public class ViewModelLocator
     {
-        // STEP 2a: Add MainPageViewModel using mvvmlocatornosa code snippet
+        /// <summary>
+        /// Gets the main page view model.
+        /// </summary>
         public MainPageViewModel MainPageViewModel
         {
             get { return new MainPageViewModel(); }
         }
 
-        // STEP 2a: Add CustomerViewModel using mvvmlocator code snippet
+        /// <summary>
+        /// Gets the customer view model.
+        /// </summary>
         public CustomerViewModel CustomerViewModel
         {
             get

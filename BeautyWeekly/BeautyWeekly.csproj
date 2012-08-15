@@ -80,8 +80,8 @@
     <Compile Include="Services\MockCustomerServiceAgent.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\ViewPicture.xaml.cs">
-      <DependentUpon>ViewPicture.xaml</DependentUpon>
+    <Compile Include="Views\ViewPicturePage.xaml.cs">
+      <DependentUpon>ViewPicturePage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -97,7 +97,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ViewPicture.xaml">
+    <Page Include="Views\ViewPicturePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

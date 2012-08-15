@@ -1,4 +1,11 @@
-﻿using System.Reflection;
+﻿//-----------------------------------------------------------------------
+// <copyright file="AssemblyInfo.cs" company="Eggfly Corporation">
+//     Copyright (c) Xiaomi Corporation. All rights reserved.
+// </copyright>
+// <author>lihaohua90@gmail.com</author>
+//-----------------------------------------------------------------------
+
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 

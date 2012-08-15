@@ -1,16 +1,19 @@
-﻿using System;
-using System.Windows;
-using System.Threading;
-using System.Collections.ObjectModel;
-
-// Toolkit namespace
-using SimpleMvvmToolkit;
-
-// Toolkit extension methods
-using SimpleMvvmToolkit.ModelExtensions;
+﻿//-----------------------------------------------------------------------
+// <copyright file="MainPageViewModel.cs" company="Eggfly Corporation">
+//     Copyright (c) Xiaomi Corporation. All rights reserved.
+// </copyright>
+// <author>lihaohua90@gmail.com</author>
+//-----------------------------------------------------------------------
 
 namespace BeautyWeekly
 {
+    using System;
+    using System.Collections.ObjectModel;
+    using System.Threading;
+    using System.Windows;
+    using SimpleMvvmToolkit;
+    using SimpleMvvmToolkit.ModelExtensions;
+
     /// <summary>
     /// This class contains properties that a View can data bind to.
     /// <para>
@@ -19,49 +22,85 @@ namespace BeautyWeekly
     /// </summary>
     public class MainPageViewModel : ViewModelBase<MainPageViewModel>
     {
+        /// <summary>
+        /// App title
+        /// </summary>
+        private string appTitle = "Simple MVVM Toolkit for WP7";
+
+        /// <summary>
+        /// Add Header property using the mvvmprop code snippet
+        /// </summary>
+        private string pageTitle = "hello mvvm";
+
         #region Initialization and Cleanup
 
-        // Default ctor
-        public MainPageViewModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MainPageViewModel"/> class.
+        /// </summary>
+        public MainPageViewModel()
+        {
+        }
 
         #endregion
 
         #region Notifications
 
-        // Add events to notify the view or obtain data from the view
+        /// <summary>
+        /// Occurs when [error notice].
+        /// Add events to notify the view or obtain data from the view
+        /// </summary>
         public event EventHandler<NotificationEventArgs<Exception>> ErrorNotice;
 
         #endregion
 
         #region Properties
 
-        private string appTitle = "Simple MVVM Toolkit for WP7";
+        /// <summary>
+        /// Gets or sets the app title.
+        /// </summary>
+        /// <value>
+        /// The app title.
+        /// </value>
         public string AppTitle
         {
             get
             {
-                if (IsInDesignMode) return "Application Title";
-                return appTitle;
+                if (this.IsInDesignMode)
+                {
+                    return "Application Title";
+                }
+
+                return this.appTitle;
             }
+
             set
             {
-                appTitle = value;
+                this.appTitle = value;
                 NotifyPropertyChanged(m => m.AppTitle);
             }
         }
 
-        // Add Header property using the mvvmprop code snippet
-        private string pageTitle = "hello mvvm";
+        /// <summary>
+        /// Gets or sets the page title.
+        /// </summary>
+        /// <value>
+        /// The page title.
+        /// </value>
         public string PageTitle
         {
             get
             {
-                if (IsInDesignMode) return "page title";
-                return pageTitle;
+                if (this.IsInDesignMode)
+                {
+                    return "page title";
+                }
+
+                return this.pageTitle;
             }
+
             set
             {
-                pageTitle = value;
+                this.pageTitle = value;
                 NotifyPropertyChanged(m => m.PageTitle);
             }
         }
@@ -78,11 +117,16 @@ namespace BeautyWeekly
 
         #region Helpers
 
-        // Helper method to notify View of an error
+        /// <summary>
+        /// Notifies the error.
+        /// Helper method to notify View of an error
+        /// </summary>
+        /// <param name="message">The message.</param>
+        /// <param name="error">The error.</param>
         private void NotifyError(string message, Exception error)
         {
             // Notify view of an error
-            Notify(ErrorNotice, new NotificationEventArgs<Exception>(message, error));
+            this.Notify(this.ErrorNotice, new NotificationEventArgs<Exception>(message, error));
         }
 
         #endregion

@@ -1,35 +1,44 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
+﻿//-----------------------------------------------------------------------
+// <copyright file="App.xaml.cs" company="Eggfly Corporation">
+//     Copyright (c) Xiaomi Corporation. All rights reserved.
+// </copyright>
+// <author>lihaohua90@gmail.com</author>
+//-----------------------------------------------------------------------
 
 namespace BeautyWeekly
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Net;
+    using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Documents;
+    using System.Windows.Input;
+    using System.Windows.Media;
+    using System.Windows.Media.Animation;
+    using System.Windows.Navigation;
+    using System.Windows.Shapes;
+    using Microsoft.Phone.Controls;
+    using Microsoft.Phone.Shell;
+
+    /// <summary>
+    /// App class
+    /// </summary>
     public partial class App : Application
     {
         /// <summary>
-        /// Provides easy access to the root frame of the Phone Application.
+        /// Avoid double-initialization
         /// </summary>
-        /// <returns>The root frame of the Phone Application.</returns>
-        public PhoneApplicationFrame RootFrame { get; private set; }
+        private bool phoneApplicationInitialized = false;
 
         /// <summary>
-        /// Constructor for the Application object.
+        /// Initializes a new instance of the <see cref="App"/> class.
         /// </summary>
         public App()
         {
             // Global handler for uncaught exceptions. 
-            UnhandledException += Application_UnhandledException;
+            this.UnhandledException += this.Application_UnhandledException;
 
             // Show graphics profiling information while debugging.
             if (System.Diagnostics.Debugger.IsAttached)
@@ -38,45 +47,72 @@ namespace BeautyWeekly
                 Application.Current.Host.Settings.EnableFrameRateCounter = true;
 
                 // Show the areas of the app that are being redrawn in each frame.
-                //Application.Current.Host.Settings.EnableRedrawRegions = true;
+                // Application.Current.Host.Settings.EnableRedrawRegions = true;
 
                 // Enable non-production analysis visualization mode, 
                 // which shows areas of a page that are being GPU accelerated with a colored overlay.
-                //Application.Current.Host.Settings.EnableCacheVisualization = true;
+                // Application.Current.Host.Settings.EnableCacheVisualization = true;
             }
 
             // Standard Silverlight initialization
-            InitializeComponent();
+            this.InitializeComponent();
 
             // Phone-specific initialization
-            InitializePhoneApplication();
+            this.InitializePhoneApplication();
         }
 
-        // Code to execute when the application is launching (eg, from Start)
-        // This code will not execute when the application is reactivated
+        /// <summary>
+        /// Gets the root frame of the application
+        /// </summary>
+        public PhoneApplicationFrame RootFrame { get; private set; }
+
+        /// <summary>
+        /// Handles the Launching event of the Application control.
+        /// This code will not execute when the application is reactivated
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="Microsoft.Phone.Shell.LaunchingEventArgs"/> instance containing the event data.</param>
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
         }
 
-        // Code to execute when the application is activated (brought to foreground)
-        // This code will not execute when the application is first launched
+        /// <summary>
+        /// Handles the Activated event of the Application control.
+        /// This code will not execute when the application is first launched
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="Microsoft.Phone.Shell.ActivatedEventArgs"/> instance containing the event data.</param>
         private void Application_Activated(object sender, ActivatedEventArgs e)
         {
         }
 
-        // Code to execute when the application is deactivated (sent to background)
-        // This code will not execute when the application is closing
+        /// <summary>
+        /// Handles the Deactivated event of the Application control.
+        /// Code to execute when the application is deactivated (sent to background)
+        /// This code will not execute when the application is closing
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="Microsoft.Phone.Shell.DeactivatedEventArgs"/> instance containing the event data.</param>
         private void Application_Deactivated(object sender, DeactivatedEventArgs e)
         {
         }
 
-        // Code to execute when the application is closing (eg, user hit Back)
-        // This code will not execute when the application is deactivated
+        /// <summary>
+        /// Handles the Closing event of the Application control.
+        /// Code to execute when the application is closing (eg, user hit Back)
+        /// This code will not execute when the application is deactivated
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="Microsoft.Phone.Shell.ClosingEventArgs"/> instance containing the event data.</param>
         private void Application_Closing(object sender, ClosingEventArgs e)
         {
         }
 
-        // Code to execute if a navigation fails
+        /// <summary>
+        /// Handles the NavigationFailed event of the RootFrame control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.Navigation.NavigationFailedEventArgs"/> instance containing the event data.</param>
         private void RootFrame_NavigationFailed(object sender, NavigationFailedEventArgs e)
         {
             if (System.Diagnostics.Debugger.IsAttached)
@@ -86,7 +122,11 @@ namespace BeautyWeekly
             }
         }
 
-        // Code to execute on Unhandled Exceptions
+        /// <summary>
+        /// Handles the UnhandledException event of the Application control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.ApplicationUnhandledExceptionEventArgs"/> instance containing the event data.</param>
         private void Application_UnhandledException(object sender, ApplicationUnhandledExceptionEventArgs e)
         {
             if (System.Diagnostics.Debugger.IsAttached)
@@ -98,36 +138,45 @@ namespace BeautyWeekly
 
         #region Phone application initialization
 
-        // Avoid double-initialization
-        private bool phoneApplicationInitialized = false;
-
-        // Do not add any additional code to this method
+        /// <summary>
+        /// Initializes the phone application.
+        /// Do not add any additional code to this method
+        /// </summary>
         private void InitializePhoneApplication()
         {
-            if (phoneApplicationInitialized)
+            if (this.phoneApplicationInitialized)
+            {
                 return;
+            }
 
             // Create the frame but don't set it as RootVisual yet; this allows the splash
             // screen to remain active until the application is ready to render.
-            RootFrame = new PhoneApplicationFrame();
-            RootFrame.Navigated += CompleteInitializePhoneApplication;
+            this.RootFrame = new PhoneApplicationFrame();
+            this.RootFrame.Navigated += this.CompleteInitializePhoneApplication;
 
             // Handle navigation failures
-            RootFrame.NavigationFailed += RootFrame_NavigationFailed;
+            this.RootFrame.NavigationFailed += this.RootFrame_NavigationFailed;
 
             // Ensure we don't initialize again
-            phoneApplicationInitialized = true;
+            this.phoneApplicationInitialized = true;
         }
 
-        // Do not add any additional code to this method
+        /// <summary>
+        /// Completes the initialize phone application.
+        /// Do not add any additional code to this method
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="System.Windows.Navigation.NavigationEventArgs"/> instance containing the event data.</param>
         private void CompleteInitializePhoneApplication(object sender, NavigationEventArgs e)
         {
             // Set the root visual to allow the application to render
-            if (RootVisual != RootFrame)
-                RootVisual = RootFrame;
+            if (this.RootVisual != this.RootFrame)
+            {
+                this.RootVisual = this.RootFrame;
+            }
 
             // Remove this handler since it is no longer needed
-            RootFrame.Navigated -= CompleteInitializePhoneApplication;
+            this.RootFrame.Navigated -= this.CompleteInitializePhoneApplication;
         }
 
         #endregion
