@@ -3,6 +3,7 @@
 [Oo]bj
 *.suo
 *.user
+*.Cache
 
 # mstest test results
 TestResults
