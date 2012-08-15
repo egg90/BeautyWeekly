@@ -9,6 +9,7 @@
     <Application.Resources>
         <vm:ViewModelLocator xmlns:vm="clr-namespace:BeautyWeekly"
                                    x:Key="Locator" />
+        <local:LocalizedStrings xmlns:local="clr-namespace:BeautyWeekly" x:Key="LocalizedStrings" />
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>

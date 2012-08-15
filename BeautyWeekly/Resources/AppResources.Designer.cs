@@ -59,5 +59,14 @@ namespace BeautyWeekly.Resources {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   查找类似 清纯美女周刊 的本地化字符串。
+        /// </summary>
+        public static string ApplicationName {
+            get {
+                return ResourceManager.GetString("ApplicationName", resourceCulture);
+            }
+        }
     }
 }
