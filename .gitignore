@@ -3,7 +3,7 @@
 [Oo]bj
 *.suo
 *.user
-*.Cache
+BeautyWeekly/*.Cache
 
 # mstest test results
 TestResults
