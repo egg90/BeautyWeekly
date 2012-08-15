@@ -20,7 +20,7 @@
         <controls:Pivot Title="MY APPLICATION">
             <!--Pivot item one-->
             <controls:PivotItem Header="item1">
-                <Grid/>
+                <Image Source="/SplashScreenImage.jpg" />
             </controls:PivotItem>
 
             <!--Pivot item two-->
