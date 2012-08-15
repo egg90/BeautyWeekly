@@ -1,6 +1,6 @@
 ﻿//-----------------------------------------------------------------------
 // <copyright file="App.xaml.cs" company="Eggfly Corporation">
-//     Copyright (c) Xiaomi Corporation. All rights reserved.
+//     Copyright (c) Eggfly Corporation. All rights reserved.
 // </copyright>
 // <author>lihaohua90@gmail.com</author>
 //-----------------------------------------------------------------------

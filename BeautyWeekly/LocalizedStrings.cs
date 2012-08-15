@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="MainPage.xaml.cs" company="Eggfly Corporation">
+// <copyright file="LocalizedStrings.cs" company="Eggfly Corporation">
 //     Copyright (c) Eggfly Corporation. All rights reserved.
 // </copyright>
 // <author>lihaohua90@gmail.com</author>
@@ -8,29 +8,36 @@
 namespace BeautyWeekly
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
     using System.Net;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Documents;
+    using System.Windows.Ink;
     using System.Windows.Input;
     using System.Windows.Media;
     using System.Windows.Media.Animation;
     using System.Windows.Shapes;
-    using Microsoft.Phone.Controls;
+    using BeautyWeekly.Resources;
 
     /// <summary>
-    /// Main Page 
+    /// LocalizedStrings class
     /// </summary>
-    public partial class MainPage : PhoneApplicationPage
+    public class LocalizedStrings
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="MainPage"/> class.
+        /// Localized resources
         /// </summary>
-        public MainPage()
+        private static AppResources localizedResources = new AppResources();
+
+        /// <summary>
+        /// Gets the localized resources.
+        /// </summary>
+        public AppResources LocalizedResources
         {
-            this.InitializeComponent();
+            get
+            {
+                return localizedResources;
+            }
         }
     }
 }

@@ -1,14 +1,14 @@
 ﻿//-----------------------------------------------------------------------
 // <copyright file="AssemblyInfo.cs" company="Eggfly Corporation">
-//     Copyright (c) Xiaomi Corporation. All rights reserved.
+//     Copyright (c) Eggfly Corporation. All rights reserved.
 // </copyright>
 // <author>lihaohua90@gmail.com</author>
 //-----------------------------------------------------------------------
 
 using System.Reflection;
+using System.Resources;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using System.Resources;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
