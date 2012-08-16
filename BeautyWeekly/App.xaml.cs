@@ -59,6 +59,7 @@ namespace BeautyWeekly
 
             // Phone-specific initialization
             this.InitializePhoneApplication();
+            
             this.SetupUriMapper();
         }
 
@@ -72,7 +73,6 @@ namespace BeautyWeekly
         /// </summary>
         private void SetupUriMapper()
         {
-            // Get the UriMapper from the app.xaml resources, and assign it to the root frame
             UriMapper mapper = new UriMapper();
             mapper.UriMappings.Add(new UriMapping());
             mapper.UriMappings[0].Uri = new Uri("/StartPage.xaml", UriKind.Relative);

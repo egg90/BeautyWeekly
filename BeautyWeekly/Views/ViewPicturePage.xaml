@@ -12,12 +12,13 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
-    shell:SystemTray.IsVisible="False">
+    shell:SystemTray.IsVisible="False"
+    DataContext="{Binding Source={StaticResource Locator}, Path=ViewPicturePageViewModel}">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <!--Pivot Control-->
-        <controls:Pivot x:Name="PhotoPivot" Margin="0" Padding="0">
+        <controls:Pivot x:Name="PhotoPivot" Margin="0" Padding="0" ItemsSource="{Binding Photos}">
             <controls:Pivot.HeaderTemplate>
                 <DataTemplate>
                     <Grid></Grid>

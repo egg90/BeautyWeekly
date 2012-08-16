@@ -58,6 +58,14 @@ namespace BeautyWeekly
         }
 
         /// <summary>
+        /// Gets the view picture page view model.
+        /// </summary>
+        public ViewPicturePageViewModel ViewPicturePageViewModel
+        {
+            get { return new ViewPicturePageViewModel(); }
+        }
+
+        /// <summary>
         /// Gets the customer view model.
         /// </summary>
         public CustomerViewModel CustomerViewModel
