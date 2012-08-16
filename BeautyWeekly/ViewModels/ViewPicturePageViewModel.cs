@@ -23,7 +23,7 @@ namespace BeautyWeekly
         /// <summary>
         /// photo strings
         /// </summary>
-        private List<string> photos = new List<string> { "/Pictures/1.jpg", "/Pictures/1.jpg" };
+        private List<string> photos = new List<string> { "/Pictures/1.jpg", "/Pictures/2.jpg" };
 
         #region Initialization and Cleanup
 
