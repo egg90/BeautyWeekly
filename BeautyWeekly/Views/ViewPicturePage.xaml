@@ -17,16 +17,27 @@
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <!--Pivot Control-->
-        <controls:Pivot Title="{Binding Path=LocalizedResources.ApplicationName, Source={StaticResource LocalizedStrings}}">
-            <!--Pivot item one-->
-            <controls:PivotItem Header="item1">
-                <Image Source="/SplashScreenImage.jpg" />
-            </controls:PivotItem>
-
-            <!--Pivot item two-->
-            <controls:PivotItem Header="item2">
-                <Image Source="/Resources/Pictures/2.jpg" />
-            </controls:PivotItem>
+        <controls:Pivot x:Name="PhotoPivot" Margin="0" Padding="0">
+            <controls:Pivot.HeaderTemplate>
+                <DataTemplate>
+                    <Grid></Grid>
+                </DataTemplate>
+            </controls:Pivot.HeaderTemplate>
+            <controls:Pivot.ItemTemplate>
+                <DataTemplate>
+                    <controls:PivotItem
+                        x:Name="PhotoPivotItem"
+                        Margin="0">
+                        <Image
+                            x:Name="PhotoPicture"
+                            Source="{Binding}"
+                            Stretch="Uniform"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch" 
+                            Margin="0" />
+                    </controls:PivotItem>
+                </DataTemplate>
+            </controls:Pivot.ItemTemplate>
         </controls:Pivot>
     </Grid>
 
