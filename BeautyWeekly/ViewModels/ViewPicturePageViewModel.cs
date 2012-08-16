@@ -23,7 +23,7 @@ namespace BeautyWeekly
         /// <summary>
         /// photo strings
         /// </summary>
-        private List<string> photos = new List<string> { "/Pictures/1.jpg", "/Pictures/2.jpg" };
+        private List<string> photos = new List<string> { "/Pictures/4.png", "/Pictures/1.jpg", "/Pictures/2.jpg", "/Pictures/3.jpg" };
 
         #region Initialization and Cleanup
 
@@ -66,7 +66,15 @@ namespace BeautyWeekly
         /// </summary>
         public void OnAppBarLikeButtonClick()
         {
-            MessageBox.Show("okok");
+            MessageBox.Show("OnAppBarLikeButtonClick");
+        }
+
+        /// <summary>
+        /// Called when [app bar about menu click].
+        /// </summary>
+        public void OnAppBarAboutMenuClick()
+        {
+            MessageBox.Show("OnAppBarAboutMenuClick");
         }
 
         #endregion

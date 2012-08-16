@@ -20,6 +20,7 @@ namespace BeautyWeekly.Views
     using System.Windows.Shapes;
     using BeautyWeekly.Resources;
     using Microsoft.Phone.Controls;
+    using Microsoft.Phone.Shell;
 
     /// <summary>
     /// ViewPicture Page

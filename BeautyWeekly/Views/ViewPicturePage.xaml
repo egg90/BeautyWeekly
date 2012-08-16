@@ -10,7 +10,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Class="BeautyWeekly.Views.ViewPicturePage"
-    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="728"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -47,20 +47,19 @@
     
     <!--Sample code showing usage of ApplicationBar-->
     <phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
-            <shell:ApplicationBarIconButton x:Name="appbar_button1" IconUri="/Images/appbar_button1.png" Text="Like"/>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Mode="Minimized" Opacity="0.5">
+            <shell:ApplicationBarIconButton x:Name="appbarLikeButton" IconUri="/Images/appbar_button1.png" Text="Like"/>
             <shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem x:Name="menuItem1" Text="About"/>
-                <shell:ApplicationBarMenuItem x:Name="menuItem2" Text="MenuItem 2"/>
+                <shell:ApplicationBarMenuItem x:Name="appbarAboutMenu" Text="About"/>
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
-	<i:Interaction.Triggers>
-        <AppBarUtils:AppBarItemTrigger Type="Button" Id="Like" Text="喜欢(design)">
+    <i:Interaction.Triggers>
+        <AppBarUtils:AppBarItemTrigger Type="Button" Id="Like" Text="{Binding LocalizedResources.Like, Source={StaticResource LocalizedStrings}}">
             <ec:CallMethodAction TargetObject="{Binding}" MethodName="OnAppBarLikeButtonClick"/>
         </AppBarUtils:AppBarItemTrigger>
-        <AppBarUtils:AppBarItemTrigger Type="MenuItem" Id="About" Text="关于(design)">
-            <ec:CallMethodAction TargetObject="{Binding}" MethodName="OnAppBarAboutItemClick"/>
+        <AppBarUtils:AppBarItemTrigger Type="MenuItem" Id="About" Text="{Binding LocalizedResources.About, Source={StaticResource LocalizedStrings}}">
+            <ec:CallMethodAction TargetObject="{Binding}" MethodName="OnAppBarAboutMenuClick"/>
         </AppBarUtils:AppBarItemTrigger>
     </i:Interaction.Triggers>
 </phone:PhoneApplicationPage>
