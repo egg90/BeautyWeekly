@@ -19,26 +19,23 @@
     DataContext="{Binding ViewPicturePageViewModel, Source={StaticResource Locator}}">
 	
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot" Background="Transparent" Margin="0">
         <!--Pivot Control-->
         <controls:Pivot x:Name="PhotoPivot" Margin="0" Padding="0" ItemsSource="{Binding Photos}">
+            <controls:Pivot.TitleTemplate>
+                <DataTemplate>
+                    <Grid Margin="0"/>
+                </DataTemplate>
+            </controls:Pivot.TitleTemplate>
             <controls:Pivot.HeaderTemplate>
                 <DataTemplate>
-                    <Grid/>
+                    <Grid Margin="0"/>
                 </DataTemplate>
             </controls:Pivot.HeaderTemplate>
             <controls:Pivot.ItemTemplate>
                 <DataTemplate>
-                    <controls:PivotItem
-                        x:Name="PhotoPivotItem"
-                        Margin="0">
-                        <Image
-                            x:Name="PhotoPicture"
-                            Source="{Binding}"
-                            Stretch="Uniform"
-                            HorizontalAlignment="Stretch"
-                            VerticalAlignment="Stretch" 
-                            Margin="0" />
+                    <controls:PivotItem x:Name="PhotoPivotItem" Margin="0" Padding="0">
+                        <Image x:Name="PhotoPicture" Source="{Binding}" Stretch="Uniform" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" />
                     </controls:PivotItem>
                 </DataTemplate>
             </controls:Pivot.ItemTemplate>
