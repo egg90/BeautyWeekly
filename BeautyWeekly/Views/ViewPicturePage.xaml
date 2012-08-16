@@ -25,7 +25,7 @@
 
             <!--Pivot item two-->
             <controls:PivotItem Header="item2">
-                <Image Source="/Resources/2.jpg" />
+                <Image Source="/Resources/Pictures/2.jpg" />
             </controls:PivotItem>
         </controls:Pivot>
     </Grid>
