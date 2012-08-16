@@ -40,8 +40,7 @@
             <!-- STEP 3: Use EventToCommand to bind Click event to view-model command -->
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="Click">
-                    <mvvm:EventToCommand
-                        Command="{Binding NewCustomerCommand}"/>
+                    <!--<mvvm:EventToCommand Command="{Binding NewCustomerCommand}"/>-->
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </Button>

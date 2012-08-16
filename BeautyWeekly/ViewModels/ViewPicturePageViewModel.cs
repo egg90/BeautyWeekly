@@ -59,7 +59,15 @@ namespace BeautyWeekly
 
         #endregion
 
-        #region Completion Callbacks
+        #region Callbacks
+
+        /// <summary>
+        /// Called when [app bar like button click].
+        /// </summary>
+        public void OnAppBarLikeButtonClick()
+        {
+            MessageBox.Show("okok");
+        }
 
         #endregion
 
