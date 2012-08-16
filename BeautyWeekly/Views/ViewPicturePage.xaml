@@ -47,7 +47,7 @@
     
     <!--Sample code showing usage of ApplicationBar-->
     <phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Mode="Minimized" Opacity="0.5">
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Mode="Minimized" Opacity="0.8">
             <shell:ApplicationBarIconButton x:Name="appbarLikeButton" IconUri="/Images/appbar_button1.png" Text="Like"/>
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem x:Name="appbarAboutMenu" Text="About"/>
