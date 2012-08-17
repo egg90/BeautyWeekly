@@ -55,7 +55,7 @@
     <Reference Include="Microsoft.Phone" />
     <Reference Include="Microsoft.Phone.Controls, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Interop" />
-    <Reference Include="SimpleMvvmToolkit-WP7, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="SimpleMvvmToolkit-WP7">
       <HintPath>..\Lib\SimpleMvvmToolkit-WP7.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows" />
