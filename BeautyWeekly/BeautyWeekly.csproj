@@ -124,11 +124,8 @@
     <Content Include="Background.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Pictures\0.jpg" />
-    <Content Include="Pictures\1.jpg" />
-    <Content Include="Pictures\2.jpg" />
-    <Content Include="Pictures\3.jpg" />
-    <Content Include="Pictures\4.png" />
+    <Content Include="Pictures\01.png" />
+    <Content Include="Pictures\02.png" />
     <Content Include="ReadMe.txt" />
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>

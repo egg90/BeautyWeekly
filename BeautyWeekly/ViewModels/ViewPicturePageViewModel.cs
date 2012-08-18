@@ -25,11 +25,8 @@ namespace BeautyWeekly
         /// </summary>
         private List<string> photos = new List<string>
         {
-            "/Pictures/0.jpg",
-            "/Pictures/1.jpg",
-            "/Pictures/2.jpg",
-            "/Pictures/3.jpg",
-            "/Pictures/4.png",
+            "/Pictures/01.png",
+            "/Pictures/02.png",
         };
 
         #region Initialization and Cleanup
