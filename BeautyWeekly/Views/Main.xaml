@@ -22,7 +22,10 @@
             <controls:PanoramaItem Header="item1">
                 <Grid>
                     <ScrollViewer>
-                        <ListBox ItemsSource="{Binding ListItems}" Height="900" HorizontalAlignment="Left" Name="listBox1" VerticalAlignment="Top" Width="419" >
+                        <ListBox ItemsSource="{Binding ListItems}" Height="900" HorizontalAlignment="Left" Name="listBox1" VerticalAlignment="Top" Width="419" BorderBrush="Transparent">
+                        	<ListBox.Background>
+                        		<ImageBrush Stretch="Fill"/>
+                        	</ListBox.Background>
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
                                     <Grid>
@@ -30,12 +33,24 @@
                                             <ColumnDefinition/>
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
-                                        <Button Grid.Column="0" Margin="10" Template="{StaticResource EmptyButtonTemplate}" Height="150" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150">
-                                            <Image Source="{Binding [0]}" Width="150" Height="150" />
+                                        <Button Grid.Column="0" Margin="10" Template="{StaticResource EmptyButtonTemplate}" Height="200" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200">
+                                            <Image Source="{Binding [0]}" Width="200" Height="200" />
                                         </Button>
-                                        <Button Grid.Column="1" Margin="10" Template="{StaticResource EmptyButtonTemplate}" Height="150" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150">
-                                            <Image Source="{Binding [1]}" Width="150" Height="150" />
+                                        <Border Grid.Column="0" VerticalAlignment="Bottom" Height="60" Width="200">
+                                            <Border.Background>
+                                            	<SolidColorBrush Opacity="0.75" Color="Black"></SolidColorBrush>
+											</Border.Background>
+											<TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Pink" Text="中文哦哦哦" FontSize="20" />
+										</Border>
+                                        <Button Grid.Column="1" Margin="10" Template="{StaticResource EmptyButtonTemplate}" Height="200" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200">
+                                            <Image Source="{Binding [1]}" Width="200" Height="200" />
                                         </Button>
+                                        <Border Grid.Column="1" VerticalAlignment="Bottom" Height="60" Width="200">
+                                            <Border.Background>
+                                            	<SolidColorBrush Opacity="0.75" Color="Black"></SolidColorBrush>
+											</Border.Background>
+											<TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Pink" Text="中文哦哦哦" FontSize="20" />
+										</Border>
                                     </Grid>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
