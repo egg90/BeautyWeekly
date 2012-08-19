@@ -58,6 +58,14 @@ namespace BeautyWeekly
         }
 
         /// <summary>
+        /// Gets the main view model.
+        /// </summary>
+        public MainViewModel MainViewModel
+        {
+            get { return new MainViewModel(); }
+        }
+
+        /// <summary>
         /// Gets the view picture page view model.
         /// </summary>
         public ViewPicturePageViewModel ViewPicturePageViewModel

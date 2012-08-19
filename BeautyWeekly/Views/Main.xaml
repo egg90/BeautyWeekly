@@ -1,0 +1,48 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="BeautyWeekly.Views.Main"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False"
+    DataContext="{Binding MainViewModel, Source={StaticResource Locator}}">
+
+    <!--LayoutRoot contains the root grid where all other page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <controls:Panorama Title="my application">
+            <!--Panorama item one-->
+            <controls:PanoramaItem Header="item1">
+                <Grid>
+                    <!--
+                    <ScrollViewer>
+                        <Button Template="{StaticResource EmptyButtonTemplate}" Content="Content" Height="72" HorizontalAlignment="Left" Margin="30,51,0,0" Name="button1" VerticalAlignment="Top" Width="160" />
+                    </ScrollViewer>
+                    -->
+                    <ListBox ItemsSource="{Binding ListItems}" Height="342" HorizontalAlignment="Left" Name="listBox1" VerticalAlignment="Top" Width="419" >
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Button Template="{StaticResource EmptyButtonTemplate}" Content="Content" Height="72" HorizontalAlignment="Left" Name="button1" VerticalAlignment="Top" Width="300"/>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </controls:PanoramaItem>
+
+            <!--Panorama item two-->
+            <controls:PanoramaItem Header="item2">
+                <Grid/>
+            </controls:PanoramaItem>
+        </controls:Panorama>
+    </Grid>
+
+    <!--Panorama-based applications should not show an ApplicationBar-->
+
+</phone:PhoneApplicationPage>
