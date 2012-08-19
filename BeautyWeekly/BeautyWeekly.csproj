@@ -134,6 +134,11 @@
     </Content>
     <Content Include="Pictures\01.png" />
     <Content Include="Pictures\02.png" />
+    <Content Include="Pictures\category1.png" />
+    <Content Include="Pictures\category2.png" />
+    <Content Include="Pictures\category3.png" />
+    <Content Include="Pictures\category4.png" />
+    <Content Include="Pictures\category5.png" />
     <Content Include="ReadMe.txt" />
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>

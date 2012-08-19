@@ -21,18 +21,26 @@
             <!--Panorama item one-->
             <controls:PanoramaItem Header="item1">
                 <Grid>
-                    <!--
                     <ScrollViewer>
-                        <Button Template="{StaticResource EmptyButtonTemplate}" Content="Content" Height="72" HorizontalAlignment="Left" Margin="30,51,0,0" Name="button1" VerticalAlignment="Top" Width="160" />
+                        <ListBox ItemsSource="{Binding ListItems}" Height="900" HorizontalAlignment="Left" Name="listBox1" VerticalAlignment="Top" Width="419" >
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Button Grid.Column="0" Margin="10" Template="{StaticResource EmptyButtonTemplate}" Height="150" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150">
+                                            <Image Source="{Binding [0]}" Width="150" Height="150" />
+                                        </Button>
+                                        <Button Grid.Column="1" Margin="10" Template="{StaticResource EmptyButtonTemplate}" Height="150" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150">
+                                            <Image Source="{Binding [1]}" Width="150" Height="150" />
+                                        </Button>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
                     </ScrollViewer>
-                    -->
-                    <ListBox ItemsSource="{Binding ListItems}" Height="342" HorizontalAlignment="Left" Name="listBox1" VerticalAlignment="Top" Width="419" >
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <Button Template="{StaticResource EmptyButtonTemplate}" Content="Content" Height="72" HorizontalAlignment="Left" Name="button1" VerticalAlignment="Top" Width="300"/>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
                 </Grid>
             </controls:PanoramaItem>
 

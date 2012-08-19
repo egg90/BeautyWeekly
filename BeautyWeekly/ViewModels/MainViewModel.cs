@@ -23,10 +23,22 @@ namespace BeautyWeekly
         /// <summary>
         /// list items
         /// </summary>
-        private List<string> listItems = new List<string>
+        private List<List<string>> listItems = new List<List<string>>
         {
-            "/Pictures/01.png",
-            "/Pictures/02.png",
+            new List<string>
+            {
+                "/Pictures/category1.png",
+                "/Pictures/category2.png",
+            },
+            new List<string>
+            {
+                "/Pictures/category3.png",
+                "/Pictures/category4.png",
+            },
+            new List<string>
+            {
+                "/Pictures/category5.png",
+            },
         };
 
         #region Initialization and Cleanup
@@ -49,7 +61,7 @@ namespace BeautyWeekly
         /// <summary>
         /// Gets the photos.
         /// </summary>
-        public List<string> ListItems
+        public List<List<string>> ListItems
         {
             get
             {
