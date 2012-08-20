@@ -70,6 +70,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="LocalizedStrings.cs" />
+    <Compile Include="Models\PictureGroup.cs" />
     <Compile Include="Resources\AppResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -139,6 +140,7 @@
     <Content Include="Pictures\category3.png" />
     <Content Include="Pictures\category4.png" />
     <Content Include="Pictures\category5.png" />
+    <Content Include="Pictures\category6.png" />
     <Content Include="ReadMe.txt" />
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>

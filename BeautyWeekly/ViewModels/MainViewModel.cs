@@ -38,6 +38,7 @@ namespace BeautyWeekly
             new List<string>
             {
                 "/Pictures/category5.png",
+                "/Pictures/category6.png",
             },
         };
 

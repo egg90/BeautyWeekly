@@ -30,7 +30,7 @@ namespace BeautyWeekly.Views
         /// </summary>
         public Main()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

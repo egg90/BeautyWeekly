@@ -17,37 +17,37 @@
 
     <!--LayoutRoot contains the root grid where all other page content is placed-->
     <Grid x:Name="LayoutRoot">
-        <controls:Panorama Title="my application">
+        <controls:Panorama>
+            <controls:Panorama.TitleTemplate>
+                <DataTemplate>
+                </DataTemplate>
+            </controls:Panorama.TitleTemplate>
             <!--Panorama item one-->
             <controls:PanoramaItem Header="item1">
                 <Grid>
-                    <ScrollViewer>
-                        <ListBox ItemsSource="{Binding ListItems}" Height="900" HorizontalAlignment="Left" Name="listBox1" VerticalAlignment="Top" Width="419" BorderBrush="Transparent">
-                        	<ListBox.Background>
-                        		<ImageBrush Stretch="Fill"/>
-                        	</ListBox.Background>
-                            <ListBox.ItemTemplate>
+                    <ListBox ItemsSource="{Binding ListItems}" HorizontalAlignment="Left" Name="listBox1" VerticalAlignment="Top" BorderBrush="Transparent" Width="420">
+                        	<ListBox.ItemTemplate>
                                 <DataTemplate>
-                                    <Grid>
+                                    <Grid HorizontalAlignment="Left">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition/>
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
-                                        <Button Grid.Column="0" Margin="10" Template="{StaticResource EmptyButtonTemplate}" Height="200" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200">
-                                            <Image Source="{Binding [0]}" Width="200" Height="200" />
+                                        <Button Grid.Column="0" Margin="5" Template="{StaticResource EmptyButtonTemplate}" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                            <Image Source="{Binding [0]}" Width="190" Height="190" />
                                         </Button>
-                                        <Border Grid.Column="0" VerticalAlignment="Bottom" Height="60" Width="200">
+                                        <Border Grid.Column="0" VerticalAlignment="Bottom" Height="50">
                                             <Border.Background>
-                                            	<SolidColorBrush Opacity="0.75" Color="Black"></SolidColorBrush>
+                                            	<SolidColorBrush Opacity="0.5" Color="Black"></SolidColorBrush>
 											</Border.Background>
 											<TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Pink" Text="中文哦哦哦" FontSize="20" />
 										</Border>
-                                        <Button Grid.Column="1" Margin="10" Template="{StaticResource EmptyButtonTemplate}" Height="200" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200">
-                                            <Image Source="{Binding [1]}" Width="200" Height="200" />
+                                        <Button Grid.Column="1" Margin="5" Template="{StaticResource EmptyButtonTemplate}" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                            <Image Source="{Binding [1]}" Width="190" Height="190" />
                                         </Button>
-                                        <Border Grid.Column="1" VerticalAlignment="Bottom" Height="60" Width="200">
+                                        <Border Grid.Column="1" VerticalAlignment="Bottom" Height="50">
                                             <Border.Background>
-                                            	<SolidColorBrush Opacity="0.75" Color="Black"></SolidColorBrush>
+                                            	<SolidColorBrush Opacity="0.5" Color="Black"></SolidColorBrush>
 											</Border.Background>
 											<TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Pink" Text="中文哦哦哦" FontSize="20" />
 										</Border>
@@ -55,7 +55,6 @@
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>
-                    </ScrollViewer>
                 </Grid>
             </controls:PanoramaItem>
 
