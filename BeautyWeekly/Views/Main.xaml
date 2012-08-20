@@ -6,7 +6,8 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -25,42 +26,81 @@
             <!--Panorama item one-->
             <controls:PanoramaItem Header="item1">
                 <Grid>
-                    <ListBox ItemsSource="{Binding ListItems}" HorizontalAlignment="Left" Name="listBox1" VerticalAlignment="Top" BorderBrush="Transparent" Width="420">
-                        	<ListBox.ItemTemplate>
-                                <DataTemplate>
-                                    <Grid HorizontalAlignment="Left">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition/>
-                                            <ColumnDefinition/>
-                                        </Grid.ColumnDefinitions>
-                                        <Button Grid.Column="0" Margin="5" Template="{StaticResource EmptyButtonTemplate}" HorizontalAlignment="Left" VerticalAlignment="Top">
-                                            <Image Source="{Binding [0]}" Width="190" Height="190" />
-                                        </Button>
+                    <ListBox toolkit:TiltEffect.IsTiltEnabled="True" ItemsSource="{Binding List1}" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Transparent" Width="420">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid HorizontalAlignment="Left">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                <Button Command="{Binding comm}" Grid.Column="0" Margin="5" Template="{StaticResource EmptyButtonTemplate}" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                    <Grid>
+                                        <Image Source="{Binding Path=[0].MainPicture}" Width="190" Height="190" />
                                         <Border Grid.Column="0" VerticalAlignment="Bottom" Height="50">
                                             <Border.Background>
-                                            	<SolidColorBrush Opacity="0.5" Color="Black"></SolidColorBrush>
-											</Border.Background>
-											<TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Pink" Text="中文哦哦哦" FontSize="20" />
-										</Border>
-                                        <Button Grid.Column="1" Margin="5" Template="{StaticResource EmptyButtonTemplate}" HorizontalAlignment="Left" VerticalAlignment="Top">
-                                            <Image Source="{Binding [1]}" Width="190" Height="190" />
-                                        </Button>
+                                                <SolidColorBrush Opacity="0.5" Color="Black"></SolidColorBrush>
+                                            </Border.Background>
+                                            <TextBlock TextWrapping="NoWrap" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Pink" Text="{Binding [0].Title}" FontSize="20" />
+                                        </Border>
+                                    </Grid>
+                                </Button>
+                                <Button Grid.Column="1" Margin="5" Template="{StaticResource EmptyButtonTemplate}" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                    <Grid>
+                                        <Image Source="{Binding Path=[1].MainPicture}" Width="190" Height="190" />
                                         <Border Grid.Column="1" VerticalAlignment="Bottom" Height="50">
                                             <Border.Background>
-                                            	<SolidColorBrush Opacity="0.5" Color="Black"></SolidColorBrush>
-											</Border.Background>
-											<TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Pink" Text="中文哦哦哦" FontSize="20" />
-										</Border>
+                                                <SolidColorBrush Opacity="0.5" Color="Black"></SolidColorBrush>
+                                            </Border.Background>
+                                            <TextBlock TextWrapping="NoWrap" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Pink" Text="{Binding [1].Title}" FontSize="20" />
+                                        </Border>
                                     </Grid>
-                                </DataTemplate>
-                            </ListBox.ItemTemplate>
-                        </ListBox>
+                                </Button>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
                 </Grid>
             </controls:PanoramaItem>
 
             <!--Panorama item two-->
             <controls:PanoramaItem Header="item2">
-                <Grid/>
+                <Grid>
+                    <ListBox toolkit:TiltEffect.IsTiltEnabled="True" ItemsSource="{Binding List2}" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Transparent" Width="420">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid HorizontalAlignment="Left">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Button Command="{Binding comm}" Grid.Column="0" Margin="5" Template="{StaticResource EmptyButtonTemplate}" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                        <Grid>
+                                            <Image Source="{Binding Path=[0].MainPicture}" Width="190" Height="190" />
+                                            <Border Grid.Column="0" VerticalAlignment="Bottom" Height="50">
+                                                <Border.Background>
+                                                    <SolidColorBrush Opacity="0.5" Color="Black"></SolidColorBrush>
+                                                </Border.Background>
+                                                <TextBlock TextWrapping="NoWrap" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Pink" Text="{Binding [0].Title}" FontSize="20" />
+                                            </Border>
+                                        </Grid>
+                                    </Button>
+                                    <Button Grid.Column="1" Margin="5" Template="{StaticResource EmptyButtonTemplate}" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                        <Grid>
+                                            <Image Source="{Binding Path=[1].MainPicture}" Width="190" Height="190" />
+                                            <Border Grid.Column="1" VerticalAlignment="Bottom" Height="50">
+                                                <Border.Background>
+                                                    <SolidColorBrush Opacity="0.5" Color="Black"></SolidColorBrush>
+                                                </Border.Background>
+                                                <TextBlock TextWrapping="NoWrap" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Pink" Text="{Binding [1].Title}" FontSize="20" />
+                                            </Border>
+                                        </Grid>
+                                    </Button>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
             </controls:PanoramaItem>
         </controls:Panorama>
     </Grid>

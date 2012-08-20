@@ -21,24 +21,56 @@ namespace BeautyWeekly
     public class MainViewModel : ViewModelBase<MainViewModel>
     {
         /// <summary>
-        /// list items
+        /// List 1
         /// </summary>
-        private List<List<string>> listItems = new List<List<string>>
+        private List<List<PictureGroup>> list1 = new List<List<PictureGroup>>
         {
-            new List<string>
+            new List<PictureGroup>
             {
-                "/Pictures/category1.png",
-                "/Pictures/category2.png",
+                new PictureGroup("周杰伦xxxxxxxx", "/Pictures/1-1.png"),
+                new PictureGroup("甄子丹xxxxxxxxx甄子丹", "/Pictures/1-2.png"),
             },
-            new List<string>
+            new List<PictureGroup>
             {
-                "/Pictures/category3.png",
-                "/Pictures/category4.png",
+                new PictureGroup("xxxx陈小春xxx", "/Pictures/1-3.png"),
+                new PictureGroup("大大xxxxxxx", "/Pictures/1-4.png"),
             },
-            new List<string>
+            new List<PictureGroup>
             {
-                "/Pictures/category5.png",
-                "/Pictures/category6.png",
+                new PictureGroup("大S sssssss", "/Pictures/1-5.png"),
+                new PictureGroup("古天乐dddddddd", "/Pictures/1-6.png"),
+            },
+        };
+
+        /// <summary>
+        /// List 2
+        /// </summary>
+        private List<List<PictureGroup>> list2 = new List<List<PictureGroup>>
+        {
+            new List<PictureGroup>
+            {
+                new PictureGroup("周杰伦xxxxxxxx", "/Pictures/2-1.jpg"),
+                new PictureGroup("甄子丹xxxxxxxxx甄子丹", "/Pictures/2-2.jpg"),
+            },
+            new List<PictureGroup>
+            {
+                new PictureGroup("xxxx陈小春xxx", "/Pictures/2-3.jpg"),
+                new PictureGroup("大大xxxxxxx", "/Pictures/2-4.jpg"),
+            },
+            new List<PictureGroup>
+            {
+                new PictureGroup("大S sssssss", "/Pictures/2-5.jpg"),
+                new PictureGroup("古天乐dddddddd", "/Pictures/2-6.jpg"),
+            },
+            new List<PictureGroup>
+            {
+                new PictureGroup("大S sssssss", "/Pictures/2-7.jpg"),
+                new PictureGroup("古天乐dddddddd", "/Pictures/2-8.jpg"),
+            },
+            new List<PictureGroup>
+            {
+                new PictureGroup("大S sssssss", "/Pictures/2-9.jpg"),
+                new PictureGroup("古天乐dddddddd", "/Pictures/2-10.jpg"),
             },
         };
 
@@ -62,11 +94,22 @@ namespace BeautyWeekly
         /// <summary>
         /// Gets the photos.
         /// </summary>
-        public List<List<string>> ListItems
+        public List<List<PictureGroup>> List1
         {
             get
             {
-                return this.listItems;
+                return this.list1;
+            }
+        }
+
+        /// <summary>
+        /// Gets the photos.
+        /// </summary>
+        public List<List<PictureGroup>> List2
+        {
+            get
+            {
+                return this.list2;
             }
         }
 

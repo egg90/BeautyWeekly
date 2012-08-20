@@ -19,6 +19,17 @@ namespace BeautyWeekly
     public class PictureGroup : ModelBase<PictureGroup>
     {
         /// <summary>
+        /// Initializes a new instance of the <see cref="PictureGroup"/> class.
+        /// </summary>
+        /// <param name="title">The title.</param>
+        /// <param name="mainPicture">The main picture.</param>
+        public PictureGroup(string title, string mainPicture)
+        {
+            this.Title = title;
+            this.MainPicture = mainPicture;
+        }
+
+        /// <summary>
         /// Gets or sets the title.
         /// </summary>
         /// <value>
