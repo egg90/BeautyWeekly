@@ -32,5 +32,23 @@ namespace BeautyWeekly.Views
         {
             this.InitializeComponent();
         }
+
+        /// <summary>
+        /// This method is called when the hardware Back button is pressed.
+        /// </summary>
+        /// <param name="e">Set e.Cancel to true to indicate that the request was handled by the application.</param>
+        protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
+        {
+            ICommonUIService commonUIService = new CommonUIService();
+            MessageBoxResult result = commonUIService.ShowMessageBox("确认退出?", "退出", true);
+            if (result != MessageBoxResult.None && result == MessageBoxResult.OK)
+            {
+                base.OnBackKeyPress(e);
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }
