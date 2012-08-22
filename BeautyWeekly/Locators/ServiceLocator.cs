@@ -26,7 +26,7 @@ namespace BeautyWeekly
         /// <summary>
         /// service lock
         /// </summary>
-        private static object servicelock = new object();
+        private static object serviceLock = new object();
 
         /// <summary>
         /// Initializes static members of the <see cref="ServiceLocator"/> class.
@@ -43,7 +43,7 @@ namespace BeautyWeekly
         /// <returns>Service Interface Instance</returns>
         public static TInterface Resolve<TInterface>()
         {
-            lock (servicelock)
+            lock (serviceLock)
             {
                 return (TInterface)services[typeof(TInterface)];
             }
