@@ -5,7 +5,7 @@
 // <author>eggfly</author>
 //-----------------------------------------------------------------------
 
-namespace BeautyWeekly
+namespace BeautyWeekly.Views
 {
     using System;
     using System.Collections.Generic;

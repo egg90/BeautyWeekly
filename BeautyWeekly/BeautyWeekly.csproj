@@ -84,6 +84,8 @@
     <Compile Include="Locators\ViewModelLocator.cs" />
     <Compile Include="Services\CommonUIService.cs" />
     <Compile Include="Locators\ServiceLocator.cs" />
+    <Compile Include="Services\ApplicationInfoService.cs" />
+    <Compile Include="Services\IApplicationInfoService.cs" />
     <Compile Include="Services\ICommonUIService.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\ViewPicturePageViewModel.cs" />

@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="ICustomerServiceAgent.cs" company="eggfly">
+// <copyright file="ApplicationInfoService.cs" company="eggfly">
 //     Copyright (c) eggfly. All rights reserved.
 // </copyright>
 // <author>eggfly</author>
@@ -9,16 +9,13 @@ namespace BeautyWeekly.Services
 {
     using System;
     using System.Linq;
+    using System.Windows;
 
     /// <summary>
-    /// ICustomerServiceAgent interface
+    /// ApplicationInfoService
     /// </summary>
-    public interface ICustomerServiceAgent
+    public class ApplicationInfoService : IApplicationInfoService
     {
-        /// <summary>
-        /// Creates the customer.
-        /// </summary>
-        /// <returns>Cusomer instance</returns>
-        Customer CreateCustomer();
+
     }
 }

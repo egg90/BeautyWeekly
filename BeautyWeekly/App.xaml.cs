@@ -76,8 +76,8 @@ namespace BeautyWeekly
             UriMapper mapper = new UriMapper();
             mapper.UriMappings.Add(new UriMapping());
             mapper.UriMappings[0].Uri = new Uri("/StartPage.xaml", UriKind.Relative);
-            mapper.UriMappings[0].MappedUri = new Uri("/Views/ViewPicturePage.xaml", UriKind.Relative);
-            //// mapper.UriMappings[0].MappedUri = new Uri("/Views/Main.xaml", UriKind.Relative);
+            //// mapper.UriMappings[0].MappedUri = new Uri("/Views/ViewPicturePage.xaml", UriKind.Relative);
+            mapper.UriMappings[0].MappedUri = new Uri("/Views/Main.xaml", UriKind.Relative);
             this.RootFrame.UriMapper = mapper;
         }
 

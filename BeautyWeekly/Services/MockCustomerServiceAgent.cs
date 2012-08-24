@@ -5,7 +5,7 @@
 // <author>eggfly</author>
 //-----------------------------------------------------------------------
 
-namespace BeautyWeekly
+namespace BeautyWeekly.Services
 {
     using System;
     using System.Linq;

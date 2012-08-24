@@ -16,7 +16,7 @@
   DataContext="{Binding Source={StaticResource Locator}, Path=ViewModelName}"
 */
 
-namespace BeautyWeekly
+namespace BeautyWeekly.Locators
 {
     using System;
     using System.Collections.Generic;
