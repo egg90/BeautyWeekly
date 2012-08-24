@@ -150,7 +150,7 @@ namespace BeautyWeekly.Services
         {
             get
             {
-                return "bd1566b8-8c7c-4a4d-b223-d84e1527f9f0";
+                return "cde80412-d5e7-4bd5-9231-e214c361820c";
             }
         }
     }
