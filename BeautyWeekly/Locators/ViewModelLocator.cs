@@ -1,8 +1,8 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="ViewModelLocator.cs" company="Eggfly Corporation">
-//     Copyright (c) Eggfly Corporation. All rights reserved.
+// <copyright file="ViewModelLocator.cs" company="eggfly">
+//     Copyright (c) eggfly. All rights reserved.
 // </copyright>
-// <author>lihaohua90@gmail.com</author>
+// <author>eggfly</author>
 //-----------------------------------------------------------------------
 
 /*
@@ -16,12 +16,14 @@
   DataContext="{Binding Source={StaticResource Locator}, Path=ViewModelName}"
 */
 
-namespace BeautyWeekly
+namespace BeautyWeekly.Locators
 {
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Linq;
+    using BeautyWeekly.Services;
+    using BeautyWeekly.ViewModel;
     using SimpleMvvmToolkit;
 
     /// <summary>

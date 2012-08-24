@@ -1,8 +1,8 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="App.xaml.cs" company="Eggfly Corporation">
-//     Copyright (c) Eggfly Corporation. All rights reserved.
+// <copyright file="App.xaml.cs" company="eggfly">
+//     Copyright (c) eggfly. All rights reserved.
 // </copyright>
-// <author>lihaohua90@gmail.com</author>
+// <author>eggfly</author>
 //-----------------------------------------------------------------------
 
 namespace BeautyWeekly
@@ -76,8 +76,8 @@ namespace BeautyWeekly
             UriMapper mapper = new UriMapper();
             mapper.UriMappings.Add(new UriMapping());
             mapper.UriMappings[0].Uri = new Uri("/StartPage.xaml", UriKind.Relative);
-            mapper.UriMappings[0].MappedUri = new Uri("/Views/ViewPicturePage.xaml", UriKind.Relative);
-            //// mapper.UriMappings[0].MappedUri = new Uri("/Views/Main.xaml", UriKind.Relative);
+            //// mapper.UriMappings[0].MappedUri = new Uri("/Views/ViewPicturePage.xaml", UriKind.Relative);
+            mapper.UriMappings[0].MappedUri = new Uri("/Views/Main.xaml", UriKind.Relative);
             this.RootFrame.UriMapper = mapper;
         }
 

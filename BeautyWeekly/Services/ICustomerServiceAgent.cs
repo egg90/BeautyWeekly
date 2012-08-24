@@ -1,14 +1,15 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="ICustomerServiceAgent.cs" company="Eggfly Corporation">
-//     Copyright (c) Eggfly Corporation. All rights reserved.
+// <copyright file="ICustomerServiceAgent.cs" company="eggfly">
+//     Copyright (c) eggfly. All rights reserved.
 // </copyright>
-// <author>lihaohua90@gmail.com</author>
+// <author>eggfly</author>
 //-----------------------------------------------------------------------
 
-namespace BeautyWeekly
+namespace BeautyWeekly.Services
 {
     using System;
     using System.Linq;
+    using BeautyWeekly.Models;
 
     /// <summary>
     /// ICustomerServiceAgent interface

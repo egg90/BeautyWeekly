@@ -1,11 +1,11 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="PictureGroup.cs" company="Eggfly Corporation">
-//     Copyright (c) Eggfly Corporation. All rights reserved.
+// <copyright file="PictureGroup.cs" company="eggfly">
+//     Copyright (c) eggfly. All rights reserved.
 // </copyright>
-// <author>lihaohua90@gmail.com</author>
+// <author>eggfly</author>
 //-----------------------------------------------------------------------
 
-namespace BeautyWeekly
+namespace BeautyWeekly.Models
 {
     using System;
     using System.Collections.Generic;

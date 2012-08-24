@@ -1,8 +1,8 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="AssemblyInfo.cs" company="Eggfly Corporation">
-//     Copyright (c) Eggfly Corporation. All rights reserved.
+// <copyright file="AssemblyInfo.cs" company="eggfly">
+//     Copyright (c) eggfly. All rights reserved.
 // </copyright>
-// <author>lihaohua90@gmail.com</author>
+// <author>eggfly</author>
 //-----------------------------------------------------------------------
 
 using System.Reflection;
@@ -16,9 +16,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("BeautyWeekly")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyCompany("eggfly")]
 [assembly: AssemblyProduct("BeautyWeekly")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2011")]
+[assembly: AssemblyCopyright("Copyright © eggfly 2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

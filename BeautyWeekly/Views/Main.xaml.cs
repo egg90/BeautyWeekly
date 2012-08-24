@@ -1,8 +1,8 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="Main.xaml.cs" company="Eggfly Corporation">
-//     Copyright (c) Eggfly Corporation. All rights reserved.
+// <copyright file="Main.xaml.cs" company="eggfly">
+//     Copyright (c) eggfly. All rights reserved.
 // </copyright>
-// <author>lihaohua90@gmail.com</author>
+// <author>eggfly</author>
 //-----------------------------------------------------------------------
 
 namespace BeautyWeekly.Views
@@ -18,6 +18,8 @@ namespace BeautyWeekly.Views
     using System.Windows.Media;
     using System.Windows.Media.Animation;
     using System.Windows.Shapes;
+    using BeautyWeekly.Locators;
+    using BeautyWeekly.Services;
     using Microsoft.Phone.Controls;
 
     /// <summary>

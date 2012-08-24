@@ -1,17 +1,18 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="ServiceLocator.cs" company="Eggfly Corporation">
-//     Copyright (c) Eggfly Corporation. All rights reserved.
+// <copyright file="ServiceLocator.cs" company="eggfly">
+//     Copyright (c) eggfly. All rights reserved.
 // </copyright>
-// <author>lihaohua90@gmail.com</author>
+// <author>eggfly</author>
 //-----------------------------------------------------------------------
 
-namespace BeautyWeekly
+namespace BeautyWeekly.Locators
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
     using System.Windows;
+    using BeautyWeekly.Services;
 
     /// <summary>
     /// service locator
@@ -34,6 +35,7 @@ namespace BeautyWeekly
         static ServiceLocator()
         {
             RegisterSingleton<ICommonUIService, CommonUIService>();
+            RegisterSingleton<IApplicationInfoService, ApplicationInfoService>();
         }
 
         /// <summary>

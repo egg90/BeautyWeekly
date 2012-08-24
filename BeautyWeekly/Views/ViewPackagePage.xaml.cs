@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="ViewPicturePage.xaml.cs" company="eggfly">
+// <copyright file="ViewPackagePage.xaml.cs" company="eggfly">
 //     Copyright (c) eggfly. All rights reserved.
 // </copyright>
 // <author>eggfly</author>
@@ -18,19 +18,19 @@ namespace BeautyWeekly.Views
     using System.Windows.Media;
     using System.Windows.Media.Animation;
     using System.Windows.Shapes;
-    using BeautyWeekly.Resources;
+    using BeautyWeekly.Locators;
+    using BeautyWeekly.Services;
     using Microsoft.Phone.Controls;
-    using Microsoft.Phone.Shell;
 
     /// <summary>
-    /// ViewPicture Page
+    /// ViewPackagePage class
     /// </summary>
-    public partial class ViewPicturePage : PhoneApplicationPage
+    public partial class ViewPackagePage : PhoneApplicationPage
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ViewPicturePage"/> class.
+        /// Initializes a new instance of the <see cref="ViewPackagePage"/> class.
         /// </summary>
-        public ViewPicturePage()
+        public ViewPackagePage()
         {
             this.InitializeComponent();
         }

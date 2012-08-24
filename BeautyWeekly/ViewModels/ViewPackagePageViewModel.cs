@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="MainViewModel.cs" company="eggfly">
+// <copyright file="ViewPackagePageViewModel.cs" company="eggfly">
 //     Copyright (c) eggfly. All rights reserved.
 // </copyright>
 // <author>eggfly</author>
@@ -21,7 +21,7 @@ namespace BeautyWeekly.ViewModel
     /// <summary>
     /// MainViewModel class
     /// </summary>
-    public class MainViewModel : ViewModelBase<MainViewModel>
+    public class ViewPackagePageViewModel : ViewModelBase<ViewPackagePageViewModel>
     {
         /// <summary>
         /// the categories
@@ -60,16 +60,10 @@ namespace BeautyWeekly.ViewModel
         #region Initialization and Cleanup
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MainViewModel"/> class.
+        /// Initializes a new instance of the <see cref="ViewPackagePageViewModel"/> class.
         /// </summary>
-        public MainViewModel()
+        public ViewPackagePageViewModel()
         {
-            ServiceLocator.Resolve<ICommonUIService>().ShowMessageBox(ServiceLocator.Resolve<IApplicationInfoService>().DeviceStatusString, "DeviceStatusString");
-            ServiceLocator.Resolve<ICommonUIService>().ShowMessageBox(ServiceLocator.Resolve<IApplicationInfoService>().DeviceUniqueId, "DeviceUniqueId");
-            ServiceLocator.Resolve<ICommonUIService>().ShowMessageBox(ServiceLocator.Resolve<IApplicationInfoService>().OSVersion, "OSVersion");
-            ServiceLocator.Resolve<ICommonUIService>().ShowMessageBox(ServiceLocator.Resolve<IApplicationInfoService>().VersionNumber, "VersionNumber");
-            ServiceLocator.Resolve<ICommonUIService>().ShowMessageBox(ServiceLocator.Resolve<IApplicationInfoService>().AppID, "AppID");
-            ServiceLocator.Resolve<ICommonUIService>().ShowMessageBox(ServiceLocator.Resolve<IApplicationInfoService>().NetworkStatus.ToString("F"), "NetworkStatus");
         }
 
         #endregion
