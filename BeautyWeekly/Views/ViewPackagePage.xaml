@@ -18,34 +18,33 @@
 
     <!--LayoutRoot contains the root grid where all other page content is placed-->
     <Grid x:Name="LayoutRoot">
-        <ListBox toolkit:TiltEffect.IsTiltEnabled="True" ItemsSource="{Binding PictureGroups}" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Transparent" Width="420">
-            <ListBox.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <toolkit:WrapPanel Orientation="Horizontal"/>
-                </ItemsPanelTemplate>
-            </ListBox.ItemsPanel>
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid HorizontalAlignment="Left">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        <Button Command="{Binding comm}" Grid.Column="0" Margin="5" Template="{StaticResource EmptyButtonTemplate}" HorizontalAlignment="Left" VerticalAlignment="Top">
-                            <Grid>
-                                <Image Source="{Binding Path=MainPicture}" Width="190" Height="190" />
-                                <Border Grid.Column="0" VerticalAlignment="Bottom" Width="190" Height="45">
-                                    <Border.Background>
-                                        <SolidColorBrush Opacity="0.5" Color="Black"></SolidColorBrush>
-                                    </Border.Background>
-                                    <TextBlock TextWrapping="NoWrap" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Pink" Text="{Binding Title}" FontSize="20" />
-                                </Border>
-                            </Grid>
-                        </Button>
-                    </Grid>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        <StackPanel>
+            <TextBlock Text="清纯美女 第12期" Margin="20" FontSize="36" />
+            <ListBox toolkit:TiltEffect.IsTiltEnabled="True" ItemsSource="{Binding PictureGroups}" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Transparent" Height="710" Width="480">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <toolkit:WrapPanel Orientation="Horizontal" HorizontalAlignment="Left"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Button Command="{Binding comm}" Margin="6" Template="{StaticResource EmptyButtonTemplate}" Height="210" Width="210">
+                                <Grid>
+                                    <Image Source="{Binding Path=MainPicture}" />
+                                    <Border VerticalAlignment="Bottom" Height="45">
+                                        <Border.Background>
+                                            <SolidColorBrush Opacity="0.5" Color="Black"></SolidColorBrush>
+                                        </Border.Background>
+                                        <TextBlock TextWrapping="NoWrap" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Pink" Text="{Binding Title}" FontSize="20" />
+                                    </Border>
+                                </Grid>
+                            </Button>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
     </Grid>
 
     <!--Panorama-based applications should not show an ApplicationBar-->

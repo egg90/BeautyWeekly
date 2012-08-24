@@ -24,37 +24,27 @@ namespace BeautyWeekly.ViewModel
     public class ViewPackagePageViewModel : ViewModelBase<ViewPackagePageViewModel>
     {
         /// <summary>
-        /// the categories
+        /// the picture groups
         /// </summary>
-        private List<Category> categories = new List<Category>
+        private List<PictureGroup> pictureGroups = new List<PictureGroup>
         {
-            new Category(
-                "Category1",
-                new List<PictureGroup>
-                {
-                    new PictureGroup("周杰伦xxxxxxxx", "/Pictures/1-1.png"),
-                    new PictureGroup("甄子丹xxxxxxxxx甄子丹", "/Pictures/1-2.png"),
-                    new PictureGroup("xxxx陈小春xxx", "/Pictures/1-3.png"),
-                    new PictureGroup("大大xxxxxxx", "/Pictures/1-4.png"),
-                    new PictureGroup("大S sssssss", "/Pictures/1-5.png"),
-                    new PictureGroup("古天乐dddddddd", "/Pictures/1-6.png"),
-                }),
+            new PictureGroup("周杰伦xxxxxxxx", "/Pictures/1-1.png"),
+            new PictureGroup("甄子丹xxxxxxxxx甄子丹", "/Pictures/1-2.png"),
+            new PictureGroup("xxxx陈小春xxx", "/Pictures/1-3.png"),
+            new PictureGroup("大大xxxxxxx", "/Pictures/1-4.png"),
+            new PictureGroup("大S sssssss", "/Pictures/1-5.png"),
+            new PictureGroup("古天乐dddddddd", "/Pictures/1-6.png"),
 
-            new Category(
-                "Category2",
-                new List<PictureGroup>
-                {
-                    new PictureGroup("周杰伦xxxxxxxx", "/Pictures/2-1.jpg"),
-                    new PictureGroup("甄子丹xxxxxxxxx甄子丹", "/Pictures/2-2.jpg"),
-                    new PictureGroup("xxxx陈小春xxx", "/Pictures/2-3.jpg"),
-                    new PictureGroup("大大xxxxxxx", "/Pictures/2-4.jpg"),
-                    new PictureGroup("大S sssssss", "/Pictures/2-5.jpg"),
-                    new PictureGroup("古天乐dddddddd", "/Pictures/2-6.jpg"),
-                    new PictureGroup("大S sssssss", "/Pictures/2-7.jpg"),
-                    new PictureGroup("古天乐dddddddd", "/Pictures/2-8.jpg"),
-                    new PictureGroup("大S sssssss", "/Pictures/2-9.jpg"),
-                    new PictureGroup("古天乐dddddddd", "/Pictures/2-10.jpg"),
-                }),
+            new PictureGroup("周杰伦xxxxxxxx", "/Pictures/2-1.jpg"),
+            new PictureGroup("甄子丹xxxxxxxxx甄子丹", "/Pictures/2-2.jpg"),
+            new PictureGroup("xxxx陈小春xxx", "/Pictures/2-3.jpg"),
+            new PictureGroup("大大xxxxxxx", "/Pictures/2-4.jpg"),
+            new PictureGroup("大S sssssss", "/Pictures/2-5.jpg"),
+            new PictureGroup("古天乐dddddddd", "/Pictures/2-6.jpg"),
+            new PictureGroup("大S sssssss", "/Pictures/2-7.jpg"),
+            new PictureGroup("古天乐dddddddd", "/Pictures/2-8.jpg"),
+            new PictureGroup("大S sssssss", "/Pictures/2-9.jpg"),
+            new PictureGroup("古天乐dddddddd", "/Pictures/2-10.jpg"),
         };
 
         #region Initialization and Cleanup
@@ -77,11 +67,11 @@ namespace BeautyWeekly.ViewModel
         /// <summary>
         /// Gets the photos.
         /// </summary>
-        public List<Category> Categories
+        public List<PictureGroup> PictureGroups
         {
             get
             {
-                return this.categories;
+                return this.pictureGroups;
             }
         }
 
