@@ -65,6 +65,11 @@ namespace BeautyWeekly.ViewModel
         public MainViewModel()
         {
             ServiceLocator.Resolve<ICommonUIService>().ShowMessageBox(ServiceLocator.Resolve<IApplicationInfoService>().DeviceStatusString, "DeviceStatusString");
+            ServiceLocator.Resolve<ICommonUIService>().ShowMessageBox(ServiceLocator.Resolve<IApplicationInfoService>().DeviceUniqueId, "DeviceUniqueId");
+            ServiceLocator.Resolve<ICommonUIService>().ShowMessageBox(ServiceLocator.Resolve<IApplicationInfoService>().OSVersion, "OSVersion");
+            ServiceLocator.Resolve<ICommonUIService>().ShowMessageBox(ServiceLocator.Resolve<IApplicationInfoService>().VersionNumber, "VersionNumber");
+            ServiceLocator.Resolve<ICommonUIService>().ShowMessageBox(ServiceLocator.Resolve<IApplicationInfoService>().AppID, "AppID");
+            ServiceLocator.Resolve<ICommonUIService>().ShowMessageBox(ServiceLocator.Resolve<IApplicationInfoService>().NetworkStatus.ToString("F"), "NetworkStatus");
         }
 
         #endregion
