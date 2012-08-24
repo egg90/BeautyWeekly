@@ -7,7 +7,7 @@
 
     <!--Application Resources-->
     <Application.Resources>
-        <vm:ViewModelLocator xmlns:vm="clr-namespace:BeautyWeekly" x:Key="Locator" />
+        <vm:ViewModelLocator xmlns:vm="clr-namespace:BeautyWeekly.Locators" x:Key="Locator" />
         <local:LocalizedStrings xmlns:local="clr-namespace:BeautyWeekly" x:Key="LocalizedStrings" />
 
         <ControlTemplate x:Key="EmptyButtonTemplate"

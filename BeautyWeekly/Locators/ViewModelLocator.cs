@@ -22,6 +22,8 @@ namespace BeautyWeekly.Locators
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Linq;
+    using BeautyWeekly.Services;
+    using BeautyWeekly.ViewModel;
     using SimpleMvvmToolkit;
 
     /// <summary>

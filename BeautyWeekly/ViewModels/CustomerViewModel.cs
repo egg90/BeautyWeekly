@@ -12,6 +12,8 @@ namespace BeautyWeekly.ViewModel
     using System.Threading;
     using System.Windows;
     using System.Windows.Input;
+    using BeautyWeekly.Models;
+    using BeautyWeekly.Services;
     using SimpleMvvmToolkit;
     using SimpleMvvmToolkit.ModelExtensions;
 

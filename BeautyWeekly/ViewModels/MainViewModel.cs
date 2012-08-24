@@ -12,6 +12,9 @@ namespace BeautyWeekly.ViewModel
     using System.Collections.ObjectModel;
     using System.Threading;
     using System.Windows;
+    using BeautyWeekly.Locators;
+    using BeautyWeekly.Models;
+    using BeautyWeekly.Services;
     using SimpleMvvmToolkit;
     using SimpleMvvmToolkit.ModelExtensions;
 
@@ -61,6 +64,7 @@ namespace BeautyWeekly.ViewModel
         /// </summary>
         public MainViewModel()
         {
+            ServiceLocator.Resolve<ICommonUIService>().ShowMessageBox(ServiceLocator.Resolve<IApplicationInfoService>().DeviceStatusString, "DeviceStatusString");
         }
 
         #endregion

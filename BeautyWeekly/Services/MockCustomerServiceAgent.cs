@@ -9,6 +9,7 @@ namespace BeautyWeekly.Services
 {
     using System;
     using System.Linq;
+    using BeautyWeekly.Models;
 
     /// <summary>
     /// MockCustomerServiceAgent class

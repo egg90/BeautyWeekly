@@ -59,6 +59,9 @@
       <HintPath>..\Lib\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\Lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="SimpleMvvmToolkit-WP7">
       <HintPath>..\Lib\SimpleMvvmToolkit-WP7.dll</HintPath>
     </Reference>

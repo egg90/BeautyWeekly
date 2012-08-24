@@ -1,5 +1,4 @@
-﻿using BeautyWeekly.Services;
-//-----------------------------------------------------------------------
+﻿//-----------------------------------------------------------------------
 // <copyright file="IApplicationInfoService.cs" company="eggfly">
 //     Copyright (c) eggfly. All rights reserved.
 // </copyright>
@@ -11,6 +10,7 @@ namespace BeautyWeekly.Services
     using System;
     using System.Linq;
     using System.Windows;
+    using BeautyWeekly.Services;
 
     /// <summary>
     /// Network Status Enum
@@ -23,14 +23,19 @@ namespace BeautyWeekly.Services
         Disconnected = 0,
 
         /// <summary>
-        /// Wifi
+        /// WiFi network
         /// </summary>
-        Wifi,
+        WiFi,
 
         /// <summary>
         /// Cellular network
         /// </summary>
         Mobile,
+
+        /// <summary>
+        /// Unknown network status
+        /// </summary>
+        Unknown,
     }
 
     /// <summary>
@@ -74,19 +79,16 @@ namespace BeautyWeekly.Services
         }
 
         /// <summary>
-        /// Gets the device status.
+        /// Gets the device status string.
         /// </summary>
-        string DeviceStatus
+        string DeviceStatusString
         {
             get;
         }
 
         /// <summary>
-        /// Gets a value indicating whether this instance is using wifi.
+        /// Gets the network status.
         /// </summary>
-        /// <value>
-        /// <c>true</c> if this instance is using wifi; otherwise, <c>false</c>.
-        /// </value>
         NetworkStatusEnum NetworkStatus
         {
             get;
@@ -99,6 +101,5 @@ namespace BeautyWeekly.Services
         {
             get;
         }
-
     }
 }
