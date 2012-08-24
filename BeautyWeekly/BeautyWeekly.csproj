@@ -92,6 +92,7 @@
     <Compile Include="Services\ICommonUIService.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\ViewPicturePageViewModel.cs" />
+    <Compile Include="ViewModels\ViewPackagePageViewModel.cs" />
     <Compile Include="Views\CustomerView.xaml.cs">
       <DependentUpon>CustomerView.xaml</DependentUpon>
     </Compile>
@@ -109,6 +110,9 @@
     </Compile>
     <Compile Include="Views\ViewPicturePage.xaml.cs">
       <DependentUpon>ViewPicturePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewPackagePage.xaml.cs">
+      <DependentUpon>ViewPackagePage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -131,6 +135,10 @@
     <Page Include="Views\ViewPicturePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ViewPackagePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
