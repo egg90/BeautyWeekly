@@ -31,7 +31,7 @@ namespace BeautyWeekly.ViewModel
             new PictureGroup("周杰伦xxxxxxxx", "/Pictures/1-1.png"),
             new PictureGroup("甄子丹xxxxxxxxx甄子丹", "/Pictures/1-2.png"),
             new PictureGroup("xxxx陈小春xxx", "/Pictures/1-3.png"),
-            new PictureGroup("大大xxxxxxx", "/Pictures/1-4.png"),
+            new PictureGroup("陈意涵xxxxxxx", "/Pictures/1-4.png"),
             new PictureGroup("大S sssssss", "/Pictures/1-5.png"),
             new PictureGroup("古天乐dddddddd", "/Pictures/1-6.png"),
 

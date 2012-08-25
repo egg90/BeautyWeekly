@@ -43,7 +43,7 @@ namespace BeautyWeekly.Locators
         /// </summary>
         /// <typeparam name="TInterface">The type of the interface.</typeparam>
         /// <returns>Service Interface Instance</returns>
-        public static TInterface Resolve<TInterface>()
+        public static TInterface Get<TInterface>()
         {
             lock (serviceLock)
             {

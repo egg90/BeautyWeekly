@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="Category.cs" company="eggfly">
+// <copyright file="Package.cs" company="eggfly">
 //     Copyright (c) eggfly. All rights reserved.
 // </copyright>
 // <author>eggfly</author>
@@ -14,19 +14,21 @@ namespace BeautyWeekly.Models
     using SimpleMvvmToolkit;
 
     /// <summary>
-    /// PictureGroup Model
+    /// Package Model
     /// </summary>
-    public class Category : ModelBase<Category>
+    public class Package : ModelBase<Package>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Category"/> class.
+        /// Initializes a new instance of the <see cref="Package"/> class.
         /// </summary>
         /// <param name="title">The title.</param>
-        /// <param name="packages">The packages.</param>
-        public Category(string title, List<Package> packages)
+        /// <param name="mainPicture">The main picture.</param>
+        /// <param name="pictureGroups">The picture groups.</param>
+        public Package(string title, string mainPicture, List<PictureGroup> pictureGroups = null)
         {
             this.Title = title;
-            this.Packages = packages;
+            this.MainPicture = mainPicture;
+            this.PictureGroups = pictureGroups;
         }
 
         /// <summary>
@@ -38,11 +40,19 @@ namespace BeautyWeekly.Models
         public string Title { get; set; }
 
         /// <summary>
+        /// Gets or sets the main picture.
+        /// </summary>
+        /// <value>
+        /// The main picture.
+        /// </value>
+        public string MainPicture { get; set; }
+
+        /// <summary>
         /// Gets or sets the picture groups.
         /// </summary>
         /// <value>
         /// The picture groups.
         /// </value>
-        public List<Package> Packages { get; set; }
+        public List<PictureGroup> PictureGroups { get; set; }
     }
 }

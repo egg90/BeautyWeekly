@@ -82,17 +82,5 @@ namespace BeautyWeekly.Locators
         {
             get { return new ViewPicturePageViewModel(); }
         }
-
-        /// <summary>
-        /// Gets the customer view model.
-        /// </summary>
-        public CustomerViewModel CustomerViewModel
-        {
-            get
-            {
-                ICustomerServiceAgent serviceAgent = new MockCustomerServiceAgent();
-                return new CustomerViewModel(serviceAgent);
-            }
-        }
     }
 }

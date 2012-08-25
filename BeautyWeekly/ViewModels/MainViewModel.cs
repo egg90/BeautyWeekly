@@ -29,33 +29,26 @@ namespace BeautyWeekly.ViewModel
         private List<Category> categories = new List<Category>
         {
             new Category(
-                "Category1",
-                new List<PictureGroup>
+                "魅惑写真",
+                new List<Package>
                 {
-                    new PictureGroup("周杰伦xxxxxxxx", "/Pictures/1-1.png"),
-                    new PictureGroup("甄子丹xxxxxxxxx甄子丹", "/Pictures/1-2.png"),
-                    new PictureGroup("xxxx陈小春xxx", "/Pictures/1-3.png"),
-                    new PictureGroup("大大xxxxxxx", "/Pictures/1-4.png"),
-                    new PictureGroup("大S sssssss", "/Pictures/1-5.png"),
-                    new PictureGroup("古天乐dddddddd", "/Pictures/1-6.png"),
+                    new Package("魅惑写真(2012.8.15)", "/Pictures/2-7.jpg"),
+                    new Package("魅惑写真(2012.8.22)", "/Pictures/1-4.png"),
                 }),
 
             new Category(
-                "Category2",
-                new List<PictureGroup>
+                "清纯私房",
+                new List<Package>
                 {
-                    new PictureGroup("周杰伦xxxxxxxx", "/Pictures/2-1.jpg"),
-                    new PictureGroup("甄子丹xxxxxxxxx甄子丹", "/Pictures/2-2.jpg"),
-                    new PictureGroup("xxxx陈小春xxx", "/Pictures/2-3.jpg"),
-                    new PictureGroup("大大xxxxxxx", "/Pictures/2-4.jpg"),
-                    new PictureGroup("大S sssssss", "/Pictures/2-5.jpg"),
-                    new PictureGroup("古天乐dddddddd", "/Pictures/2-6.jpg"),
-                    new PictureGroup("大S sssssss", "/Pictures/2-7.jpg"),
-                    new PictureGroup("古天乐dddddddd", "/Pictures/2-8.jpg"),
-                    new PictureGroup("大S sssssss", "/Pictures/2-9.jpg"),
-                    new PictureGroup("古天乐dddddddd", "/Pictures/2-10.jpg"),
+                    new Package("清纯私房(2012.8.15)", "/Pictures/1-4.png"),
+                    new Package("清纯私房(2012.8.22)", "/Pictures/2-7.jpg"),
                 }),
         };
+
+        /// <summary>
+        /// the package list tap command
+        /// </summary>
+        private DelegateCommand<Package> packageListTapCommand;
 
         #region Initialization and Cleanup
 
@@ -64,12 +57,12 @@ namespace BeautyWeekly.ViewModel
         /// </summary>
         public MainViewModel()
         {
-            ServiceLocator.Resolve<ICommonUIService>().ShowMessageBox(ServiceLocator.Resolve<IApplicationInfoService>().DeviceStatusString, "DeviceStatusString");
-            ServiceLocator.Resolve<ICommonUIService>().ShowMessageBox(ServiceLocator.Resolve<IApplicationInfoService>().DeviceUniqueId, "DeviceUniqueId");
-            ServiceLocator.Resolve<ICommonUIService>().ShowMessageBox(ServiceLocator.Resolve<IApplicationInfoService>().OSVersion, "OSVersion");
-            ServiceLocator.Resolve<ICommonUIService>().ShowMessageBox(ServiceLocator.Resolve<IApplicationInfoService>().VersionNumber, "VersionNumber");
-            ServiceLocator.Resolve<ICommonUIService>().ShowMessageBox(ServiceLocator.Resolve<IApplicationInfoService>().AppID, "AppID");
-            ServiceLocator.Resolve<ICommonUIService>().ShowMessageBox(ServiceLocator.Resolve<IApplicationInfoService>().NetworkStatus.ToString("F"), "NetworkStatus");
+            ////ServiceLocator.Resolve<ICommonUIService>().ShowMessageBox(ServiceLocator.Resolve<IApplicationInfoService>().DeviceStatusString, "DeviceStatusString");
+            ////ServiceLocator.Resolve<ICommonUIService>().ShowMessageBox(ServiceLocator.Resolve<IApplicationInfoService>().DeviceUniqueId, "DeviceUniqueId");
+            ////ServiceLocator.Resolve<ICommonUIService>().ShowMessageBox(ServiceLocator.Resolve<IApplicationInfoService>().OSVersion, "OSVersion");
+            ////ServiceLocator.Resolve<ICommonUIService>().ShowMessageBox(ServiceLocator.Resolve<IApplicationInfoService>().VersionNumber, "VersionNumber");
+            ////ServiceLocator.Resolve<ICommonUIService>().ShowMessageBox(ServiceLocator.Resolve<IApplicationInfoService>().AppID, "AppID");
+            ////ServiceLocator.Resolve<ICommonUIService>().ShowMessageBox(ServiceLocator.Resolve<IApplicationInfoService>().NetworkStatus.ToString("F"), "NetworkStatus");
         }
 
         #endregion
@@ -88,6 +81,25 @@ namespace BeautyWeekly.ViewModel
             get
             {
                 return this.categories;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the Conversation ListTap command.
+        /// </summary>
+        /// <value>
+        /// The Conversation ListTap command.
+        /// </value>
+        public DelegateCommand<Package> PackageListTapCommand
+        {
+            get
+            {
+                return this.packageListTapCommand ?? (this.packageListTapCommand = new DelegateCommand<Package>(this.OnPackageListBoxTap));
+            }
+
+            set
+            {
+                this.packageListTapCommand = value;
             }
         }
 
@@ -113,6 +125,15 @@ namespace BeautyWeekly.ViewModel
         public void OnAppBarAboutMenuClick()
         {
             MessageBox.Show("OnAppBarAboutMenuClick");
+        }
+
+        /// <summary>
+        /// Called when [package list box tap].
+        /// </summary>
+        /// <param name="args">The args.</param>
+        public void OnPackageListBoxTap(Package args)
+        {
+            ServiceLocator.Get<ICommonUIService>().ShowMessageBox(args.ToString(), "title");
         }
 
         #endregion
