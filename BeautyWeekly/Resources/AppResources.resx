@@ -123,6 +123,9 @@
   <data name="ApplicationName" xml:space="preserve">
     <value>Beauty Weekly</value>
   </data>
+  <data name="ExitMessage" xml:space="preserve">
+    <value>Are you sure to exit?</value>
+  </data>
   <data name="Like" xml:space="preserve">
     <value>Like</value>
   </data>

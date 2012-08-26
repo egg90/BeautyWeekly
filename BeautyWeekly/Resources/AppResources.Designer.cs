@@ -79,6 +79,15 @@ namespace BeautyWeekly.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Are you sure to exit? 的本地化字符串。
+        /// </summary>
+        public static string ExitMessage {
+            get {
+                return ResourceManager.GetString("ExitMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Like 的本地化字符串。
         /// </summary>
         public static string Like {

@@ -133,7 +133,9 @@ namespace BeautyWeekly.ViewModel
         /// <param name="args">The args.</param>
         public void OnPackageListBoxTap(Package args)
         {
-            ServiceLocator.Get<ICommonUIService>().ShowMessageBox(args.ToString(), "title");
+            //// ServiceLocator.Get<ICommonUIService>().ShowMessageBox(args.ToString(), "title");
+            string target = string.Format("/Views/ViewPackagePage.xaml?id={0}", 0);
+            ServiceLocator.Get<INavigator>().NavigateTo(target);
         }
 
         #endregion

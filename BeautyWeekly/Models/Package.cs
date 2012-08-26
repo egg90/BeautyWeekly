@@ -10,6 +10,7 @@ namespace BeautyWeekly.Models
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Data.Linq.Mapping;
     using System.Linq;
     using SimpleMvvmToolkit;
 
@@ -30,6 +31,15 @@ namespace BeautyWeekly.Models
             this.MainPicture = mainPicture;
             this.PictureGroups = pictureGroups;
         }
+
+        /// <summary>
+        /// Gets or sets the id.
+        /// </summary>
+        /// <value>
+        /// The id.
+        /// </value>
+        [Column(IsPrimaryKey = true, IsDbGenerated = true, DbType = "INT NOT NULL Identity", CanBeNull = false, AutoSync = AutoSync.OnInsert)]
+        public int Id { get; set; }
 
         /// <summary>
         /// Gets or sets the title.
@@ -54,5 +64,13 @@ namespace BeautyWeekly.Models
         /// The picture groups.
         /// </value>
         public List<PictureGroup> PictureGroups { get; set; }
+
+        /// <summary>
+        /// Gets or sets the create time.
+        /// </summary>
+        /// <value>
+        /// The create time.
+        /// </value>
+        public DateTime CreateTime { get; set; }
     }
 }

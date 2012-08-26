@@ -13,6 +13,7 @@ namespace BeautyWeekly.Locators
     using System.Reflection;
     using System.Windows;
     using BeautyWeekly.Services;
+    using SimpleMvvmToolkit;
 
     /// <summary>
     /// service locator
@@ -36,6 +37,7 @@ namespace BeautyWeekly.Locators
         {
             RegisterSingleton<ICommonUIService, CommonUIService>();
             RegisterSingleton<IApplicationInfoService, ApplicationInfoService>();
+            RegisterSingleton<INavigator, Navigator>();
         }
 
         /// <summary>
