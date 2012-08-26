@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
-  <App xmlns="" ProductID="{cde80412-d5e7-4bd5-9231-e214c361820c}" Title="BeautyWeekly" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="BeautyWeekly author" Description="Sample description" Publisher="BeautyWeekly">
+  <App xmlns="" ProductID="{cde80412-d5e7-4bd5-9231-e214c361820c}" Title="@AppResLib\AppResLib.dll,-100" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="BeautyWeekly author" Description="Sample description" Publisher="BeautyWeekly">
     <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_GAMERSERVICES" />
@@ -23,7 +23,7 @@
         <TemplateType5>
           <BackgroundImageURI IsRelative="true" IsResource="false">Background.png</BackgroundImageURI>
           <Count>0</Count>
-          <Title>BeautyWeekly</Title>
+          <Title>@AppResLib\AppResLib.dll,-200</Title>
         </TemplateType5>
       </PrimaryToken>
     </Tokens>
