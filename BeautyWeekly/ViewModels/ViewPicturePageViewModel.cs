@@ -18,7 +18,7 @@ namespace BeautyWeekly.ViewModel
     /// <summary>
     /// ViewPicturePageViewModel class
     /// </summary>
-    public class ViewPicturePageViewModel : ViewModelBase<MainPageViewModel>
+    public class ViewPicturePageViewModel : ViewModelBase<ViewPicturePageViewModel>
     {
         /// <summary>
         /// photo strings

@@ -94,7 +94,6 @@
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\ViewPicturePageViewModel.cs" />
     <Compile Include="ViewModels\ViewPackagePageViewModel.cs" />
-    <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Main.xaml.cs">
       <DependentUpon>Main.xaml</DependentUpon>
@@ -158,7 +157,6 @@
     <Content Include="Pictures\2-7.jpg" />
     <Content Include="Pictures\2-8.jpg" />
     <Content Include="Pictures\2-9.jpg" />
-    <Content Include="ReadMe.txt" />
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <ItemGroup>

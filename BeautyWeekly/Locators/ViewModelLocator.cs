@@ -52,14 +52,6 @@ namespace BeautyWeekly.Locators
     public class ViewModelLocator
     {
         /// <summary>
-        /// Gets the main page view model.
-        /// </summary>
-        public MainPageViewModel MainPageViewModel
-        {
-            get { return new MainPageViewModel(); }
-        }
-
-        /// <summary>
         /// Gets the view package page view model.
         /// </summary>
         public ViewPackagePageViewModel ViewPackagePageViewModel
