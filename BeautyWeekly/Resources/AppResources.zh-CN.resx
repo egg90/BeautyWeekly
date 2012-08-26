@@ -118,12 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>About</value>
+    <value>关于</value>
   </data>
   <data name="ApplicationName" xml:space="preserve">
-    <value>Pure Beauty Weekly</value>
+    <value>阳光美女周刊</value>
   </data>
   <data name="Like" xml:space="preserve">
-    <value>Like</value>
+    <value>喜欢</value>
   </data>
 </root>

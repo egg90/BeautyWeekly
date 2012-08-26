@@ -41,4 +41,4 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: NeutralResourcesLanguageAttribute("zh-CN")]
+[assembly: NeutralResourcesLanguageAttribute("en-US")]
