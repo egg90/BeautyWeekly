@@ -39,6 +39,7 @@ namespace BeautyWeekly.Services
         /// </returns>
         public IList<Package> GetPackages()
         {
+            this.CreateDBIfNotExist();
             lock (this.dataContextLock)
             {
                 using (var dataContext = new AppDataContext())

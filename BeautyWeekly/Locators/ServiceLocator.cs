@@ -37,6 +37,7 @@ namespace BeautyWeekly.Locators
         {
             RegisterSingleton<ICommonUIService, CommonUIService>();
             RegisterSingleton<IApplicationInfoService, ApplicationInfoService>();
+            RegisterSingleton<IDBManagerService, DBManagerService>();
             RegisterSingleton<INavigator, Navigator>();
         }
 
