@@ -28,23 +28,23 @@ namespace BeautyWeekly.ViewModel
         /// </summary>
         private List<PictureGroup> pictureGroups = new List<PictureGroup>
         {
-            new PictureGroup("周杰伦xxxxxxxx", "/Pictures/1-1.png"),
-            new PictureGroup("甄子丹xxxxxxxxx甄子丹", "/Pictures/1-2.png"),
-            new PictureGroup("xxxx陈小春xxx", "/Pictures/1-3.png"),
-            new PictureGroup("陈意涵xxxxxxx", "/Pictures/1-4.png"),
-            new PictureGroup("大S sssssss", "/Pictures/1-5.png"),
-            new PictureGroup("古天乐dddddddd", "/Pictures/1-6.png"),
+            new PictureGroup { Title = "周杰伦xxxxxxxx", MainPicture = "/Pictures/1-1.png" },
+            new PictureGroup { Title = "甄子丹xxxxxxxxx甄子丹", MainPicture = "/Pictures/1-2.png" },
+            new PictureGroup { Title = "xxxx陈小春xxx", MainPicture = "/Pictures/1-3.png" },
+            new PictureGroup { Title = "陈意涵xxxxxxx", MainPicture = "/Pictures/1-4.png" },
+            new PictureGroup { Title = "大S sssssss", MainPicture = "/Pictures/1-5.png" },
+            new PictureGroup { Title = "古天乐dddddddd", MainPicture = "/Pictures/1-6.png" },
 
-            new PictureGroup("周杰伦xxxxxxxx", "/Pictures/2-1.jpg"),
-            new PictureGroup("甄子丹xxxxxxxxx甄子丹", "/Pictures/2-2.jpg"),
-            new PictureGroup("xxxx陈小春xxx", "/Pictures/2-3.jpg"),
-            new PictureGroup("大大xxxxxxx", "/Pictures/2-4.jpg"),
-            new PictureGroup("大S sssssss", "/Pictures/2-5.jpg"),
-            new PictureGroup("古天乐dddddddd", "/Pictures/2-6.jpg"),
-            new PictureGroup("大S sssssss", "/Pictures/2-7.jpg"),
-            new PictureGroup("古天乐dddddddd", "/Pictures/2-8.jpg"),
-            new PictureGroup("大S sssssss", "/Pictures/2-9.jpg"),
-            new PictureGroup("古天乐dddddddd", "/Pictures/2-10.jpg"),
+            new PictureGroup { Title = "周杰伦xxxxxxxx", MainPicture = "/Pictures/2-1.jpg" },
+            new PictureGroup { Title = "甄子丹xxxxxxxxx甄子丹", MainPicture = "/Pictures/2-2.jpg" },
+            new PictureGroup { Title = "xxxx陈小春xxx", MainPicture = "/Pictures/2-3.jpg" },
+            new PictureGroup { Title = "大大xxxxxxx", MainPicture = "/Pictures/2-4.jpg" },
+            new PictureGroup { Title = "大S sssssss", MainPicture = "/Pictures/2-5.jpg" },
+            new PictureGroup { Title = "古天乐dddddddd", MainPicture = "/Pictures/2-6.jpg" },
+            new PictureGroup { Title = "大S sssssss", MainPicture = "/Pictures/2-7.jpg" },
+            new PictureGroup { Title = "古天乐dddddddd", MainPicture = "/Pictures/2-8.jpg" },
+            new PictureGroup { Title = "大S sssssss", MainPicture = "/Pictures/2-9.jpg" },
+            new PictureGroup { Title = "古天乐dddddddd", MainPicture = "/Pictures/2-10.jpg" },
         };
 
         /// <summary>

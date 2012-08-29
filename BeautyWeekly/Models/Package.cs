@@ -12,14 +12,27 @@ namespace BeautyWeekly.Models
     using System.Collections.ObjectModel;
     using System.Data.Linq.Mapping;
     using System.Linq;
+    using System.Runtime.Serialization;
+    using Newtonsoft.Json;
     using SimpleMvvmToolkit;
 
     /// <summary>
     /// Package Model
     /// </summary>
     [Table]
+    [DataContract]
     public class Package : ModelBase<Package>
     {
+        /// <summary>
+        /// picture groups
+        /// </summary>
+        private List<PictureGroup> pictureGroups = null;
+
+        /// <summary>
+        /// picture groups json
+        /// </summary>
+        private string pictureGroupsJson = string.Empty;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Package"/> class.
         /// </summary>
@@ -33,11 +46,17 @@ namespace BeautyWeekly.Models
         /// <param name="title">The title.</param>
         /// <param name="mainPicture">The main picture.</param>
         /// <param name="pictureGroups">The picture groups.</param>
-        public Package(string title, string mainPicture, List<PictureGroup> pictureGroups = null)
+        /// <param name="isInternal">if set to <c>true</c> [is internal].</param>
+        public Package(string title, string mainPicture, List<PictureGroup> pictureGroups = null, bool isInternal = false)
         {
             this.Title = title;
             this.MainPicture = mainPicture;
-            this.PictureGroups = pictureGroups;
+            if (pictureGroups != null)
+            {
+                this.PictureGroups = pictureGroups;
+            }
+
+            this.IsInternal = isInternal;
         }
 
         /// <summary>
@@ -50,12 +69,32 @@ namespace BeautyWeekly.Models
         public int Id { get; set; }
 
         /// <summary>
+        /// Gets or sets the package id.
+        /// </summary>
+        /// <value>
+        /// The package id.
+        /// </value>
+        [Column(CanBeNull = false)]
+        public int PackageId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the category.
+        /// </summary>
+        /// <value>
+        /// The category.
+        /// </value>
+        [Column(CanBeNull = false)]
+        [DataMember]
+        public string Category { get; set; }
+
+        /// <summary>
         /// Gets or sets the title.
         /// </summary>
         /// <value>
         /// The title.
         /// </value>
         [Column(CanBeNull = false)]
+        [DataMember]
         public string Title { get; set; }
 
         /// <summary>
@@ -64,7 +103,8 @@ namespace BeautyWeekly.Models
         /// <value>
         /// The main picture.
         /// </value>
-        [Column(CanBeNull = true)]
+        [Column(CanBeNull = false)]
+        [DataMember]
         public string MainPicture { get; set; }
 
         /// <summary>
@@ -73,7 +113,51 @@ namespace BeautyWeekly.Models
         /// <value>
         /// The picture groups.
         /// </value>
-        public List<PictureGroup> PictureGroups { get; set; }
+        [DataMember]
+        public List<PictureGroup> PictureGroups
+        {
+            get
+            {
+                return this.pictureGroups;
+            }
+
+            set
+            {
+                this.pictureGroups = value;
+                this.pictureGroupsJson = JsonConvert.SerializeObject(value);
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the picture groups json.
+        /// </summary>
+        /// <value>
+        /// The picture groups json.
+        /// </value>
+        [Column]
+        public string PictureGroupsJson
+        {
+            get
+            {
+                return this.pictureGroupsJson;
+            }
+
+            set
+            {
+                this.pictureGroupsJson = value;
+                this.pictureGroups = JsonConvert.DeserializeObject<List<PictureGroup>>(value);
+            }
+        }
+        
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is internal.
+        /// </summary>
+        /// <value>
+        /// <c>true</c> if this instance is internal; otherwise, <c>false</c>.
+        /// </value>
+        [Column]
+        [DataMember]
+        public bool IsInternal { get; set; }
 
         /// <summary>
         /// Gets or sets the create time.
@@ -81,6 +165,29 @@ namespace BeautyWeekly.Models
         /// <value>
         /// The create time.
         /// </value>
+        [Column]
+        [DataMember]
         public DateTime CreateTime { get; set; }
+
+        /// <summary>
+        /// Copies from.
+        /// </summary>
+        /// <param name="source">The source.</param>
+        public void CopyFrom(Package source)
+        {
+            if (this.Equals(source))
+            {
+                return;
+            }
+
+            //// this.Id won't be modified.
+            this.Category = source.Category;
+            this.CreateTime = source.CreateTime;
+            this.IsInternal = source.IsInternal;
+            this.MainPicture = source.MainPicture;
+            this.PackageId = source.PackageId;
+            this.PictureGroups = source.PictureGroups;
+            this.Title = source.Title;
+        }
     }
 }

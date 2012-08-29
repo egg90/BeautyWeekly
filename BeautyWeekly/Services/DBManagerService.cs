@@ -45,9 +45,47 @@ namespace BeautyWeekly.Services
                 this.CreateDBIfNotExist();
                 using (var dataContext = new DBContext())
                 {
-                    Table<Package> table = dataContext.Packages;
-                    return table.ToList();
+                    return dataContext.PackageTable.OrderByDescending(m => m.PackageId).ToList();
                 }
+            }
+        }
+
+        /// <summary>
+        /// Inserts the or update package.
+        /// </summary>
+        /// <param name="package">The package.</param>
+        public void InsertOrUpdatePackage(Package package)
+        {
+            lock (this.dataContextLock)
+            {
+                this.CreateDBIfNotExist();
+                using (var dataContext = new DBContext())
+                {
+                    var queryPackage = from item in dataContext.PackageTable where item.PackageId == package.PackageId select item;
+                    if (queryPackage.Any())
+                    {
+                        Package databasePackage = queryPackage.First();
+                        databasePackage.CopyFrom(package);
+                    }
+                    else
+                    {
+                        dataContext.PackageTable.InsertOnSubmit(package);
+                    }
+
+                    dataContext.SubmitChanges();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Inserts the or update packages.
+        /// </summary>
+        /// <param name="packages">The packages.</param>
+        public void InsertOrUpdatePackages(ICollection<Package> packages)
+        {
+            foreach (Package package in packages)
+            {
+                this.InsertOrUpdatePackage(package);
             }
         }
 

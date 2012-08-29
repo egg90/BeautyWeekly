@@ -15,6 +15,7 @@ namespace BeautyWeekly.ViewModel
     using BeautyWeekly.Locators;
     using BeautyWeekly.Models;
     using BeautyWeekly.Services;
+    using Newtonsoft.Json;
     using SimpleMvvmToolkit;
     using SimpleMvvmToolkit.ModelExtensions;
 
@@ -63,7 +64,27 @@ namespace BeautyWeekly.ViewModel
             ////ServiceLocator.Resolve<ICommonUIService>().ShowMessageBox(ServiceLocator.Resolve<IApplicationInfoService>().VersionNumber, "VersionNumber");
             ////ServiceLocator.Resolve<ICommonUIService>().ShowMessageBox(ServiceLocator.Resolve<IApplicationInfoService>().AppID, "AppID");
             ////ServiceLocator.Resolve<ICommonUIService>().ShowMessageBox(ServiceLocator.Resolve<IApplicationInfoService>().NetworkStatus.ToString("F"), "NetworkStatus");
-            ////IList<Package> packages = ServiceLocator.Get<IDBManagerService>().GetPackages();
+            IList<Package> packages = ServiceLocator.Get<IDBManagerService>().GetPackages();
+
+            string json;
+
+            //// picture group
+            PictureGroup pictureGroup = new PictureGroup { Title = "组图", MainPicture = "主图像url" };
+            pictureGroup.PictureList = new List<string> { "url1", "url2" };
+            
+            json = JsonConvert.SerializeObject(pictureGroup);
+            PictureGroup group = JsonConvert.DeserializeObject<PictureGroup>(json);
+
+            //// package
+            Package package = this.categories[0].Packages[0];
+            package.Category = string.Empty;
+            package.CreateTime = DateTime.Now;
+            package.PictureGroups = new List<PictureGroup> { pictureGroup, pictureGroup, };
+
+            json = JsonConvert.SerializeObject(package);
+            Package package2 = JsonConvert.DeserializeObject<Package>(json);
+
+            ServiceLocator.Get<IDBManagerService>().InsertOrUpdatePackage(package2);
         }
 
         #endregion

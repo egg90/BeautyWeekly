@@ -31,7 +31,7 @@ namespace BeautyWeekly.Models
         /// <summary>
         /// Gets the packages.
         /// </summary>
-        public Table<Package> Packages
+        public Table<Package> PackageTable
         {
             get
             {

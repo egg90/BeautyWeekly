@@ -11,22 +11,21 @@ namespace BeautyWeekly.Models
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Linq;
+    using System.Runtime.Serialization;
+    using Newtonsoft.Json;
     using SimpleMvvmToolkit;
 
     /// <summary>
     /// PictureGroup Model
     /// </summary>
+    [DataContract]
     public class PictureGroup : ModelBase<PictureGroup>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PictureGroup"/> class.
         /// </summary>
-        /// <param name="title">The title.</param>
-        /// <param name="mainPicture">The main picture.</param>
-        public PictureGroup(string title, string mainPicture)
+        public PictureGroup()
         {
-            this.Title = title;
-            this.MainPicture = mainPicture;
         }
 
         /// <summary>
@@ -35,6 +34,7 @@ namespace BeautyWeekly.Models
         /// <value>
         /// The title.
         /// </value>
+        [DataMember]
         public string Title { get; set; }
 
         /// <summary>
@@ -43,6 +43,7 @@ namespace BeautyWeekly.Models
         /// <value>
         /// The main picture.
         /// </value>
+        [DataMember]
         public string MainPicture { get; set; }
 
         /// <summary>
@@ -51,6 +52,7 @@ namespace BeautyWeekly.Models
         /// <value>
         /// The picture list.
         /// </value>
-        public ObservableCollection<string> PictureList { get; set; }
+        [DataMember]
+        public List<string> PictureList { get; set; }
     }
 }

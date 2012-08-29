@@ -23,5 +23,17 @@ namespace BeautyWeekly.Services
         /// </summary>
         /// <returns>get all packages</returns>
         IList<Package> GetPackages();
+
+        /// <summary>
+        /// Inserts the or update package.
+        /// </summary>
+        /// <param name="package">The package.</param>
+        void InsertOrUpdatePackage(Package package);
+
+        /// <summary>
+        /// Inserts the or update packages.
+        /// </summary>
+        /// <param name="packages">The packages.</param>
+        void InsertOrUpdatePackages(ICollection<Package> packages);
     }
 }
