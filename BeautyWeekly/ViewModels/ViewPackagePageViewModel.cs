@@ -47,6 +47,11 @@ namespace BeautyWeekly.ViewModel
             new PictureGroup("古天乐dddddddd", "/Pictures/2-10.jpg"),
         };
 
+        /// <summary>
+        /// pictureGroup List Tap Command
+        /// </summary>
+        private DelegateCommand<PictureGroup> pictureGroupListTapCommand;
+
         #region Initialization and Cleanup
 
         /// <summary>
@@ -75,6 +80,17 @@ namespace BeautyWeekly.ViewModel
             }
         }
 
+        /// <summary>
+        /// Gets the picture group list tap command.
+        /// </summary>
+        public DelegateCommand<PictureGroup> PictureGroupListTapCommand
+        {
+            get
+            {
+                return this.pictureGroupListTapCommand ?? (this.pictureGroupListTapCommand = new DelegateCommand<PictureGroup>(this.OnPictureGroupListBoxTap));
+            }
+        }
+
         #endregion
 
         #region Methods
@@ -97,6 +113,16 @@ namespace BeautyWeekly.ViewModel
         public void OnAppBarAboutMenuClick()
         {
             MessageBox.Show("OnAppBarAboutMenuClick");
+        }
+
+        /// <summary>
+        /// Called when [picture group list box tap].
+        /// </summary>
+        /// <param name="args">The args.</param>
+        public void OnPictureGroupListBoxTap(PictureGroup args)
+        {
+            string target = string.Format("/Views/ViewPicturePage.xaml?id={0}", 0);
+            ServiceLocator.Get<INavigator>().NavigateTo(target);
         }
 
         #endregion

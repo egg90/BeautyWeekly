@@ -63,7 +63,7 @@ namespace BeautyWeekly.ViewModel
             ////ServiceLocator.Resolve<ICommonUIService>().ShowMessageBox(ServiceLocator.Resolve<IApplicationInfoService>().VersionNumber, "VersionNumber");
             ////ServiceLocator.Resolve<ICommonUIService>().ShowMessageBox(ServiceLocator.Resolve<IApplicationInfoService>().AppID, "AppID");
             ////ServiceLocator.Resolve<ICommonUIService>().ShowMessageBox(ServiceLocator.Resolve<IApplicationInfoService>().NetworkStatus.ToString("F"), "NetworkStatus");
-            IList<Package> packages = ServiceLocator.Get<IDBManagerService>().GetPackages();
+            ////IList<Package> packages = ServiceLocator.Get<IDBManagerService>().GetPackages();
         }
 
         #endregion
@@ -86,21 +86,13 @@ namespace BeautyWeekly.ViewModel
         }
 
         /// <summary>
-        /// Gets or sets the Conversation ListTap command.
+        /// Gets the package list tap command.
         /// </summary>
-        /// <value>
-        /// The Conversation ListTap command.
-        /// </value>
         public DelegateCommand<Package> PackageListTapCommand
         {
             get
             {
                 return this.packageListTapCommand ?? (this.packageListTapCommand = new DelegateCommand<Package>(this.OnPackageListBoxTap));
-            }
-
-            set
-            {
-                this.packageListTapCommand = value;
             }
         }
 
@@ -111,22 +103,6 @@ namespace BeautyWeekly.ViewModel
         #endregion
 
         #region Callbacks
-
-        /// <summary>
-        /// Called when [app bar like button click].
-        /// </summary>
-        public void OnAppBarLikeButtonClick()
-        {
-            MessageBox.Show("OnAppBarLikeButtonClick");
-        }
-
-        /// <summary>
-        /// Called when [app bar about menu click].
-        /// </summary>
-        public void OnAppBarAboutMenuClick()
-        {
-            MessageBox.Show("OnAppBarAboutMenuClick");
-        }
 
         /// <summary>
         /// Called when [package list box tap].

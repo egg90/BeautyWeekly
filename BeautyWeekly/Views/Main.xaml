@@ -59,13 +59,9 @@
                                                 </Border>
                                             </Grid>
                                         </Button>
-                                        <!--
-                                        Command="{Binding DataContext.PackageListTapCommand, ElementName=PackageList}" CommandParameter="{Binding}"
-                                        -->
                                         <i:Interaction.Triggers>
                                             <i:EventTrigger EventName="Tap">
-                                                <i:InvokeCommandAction Command="{Binding DataContext.PackageListTapCommand, ElementName=Panorama}"
-                                                                               CommandParameter="{Binding}" />
+                                                <i:InvokeCommandAction Command="{Binding DataContext.PackageListTapCommand, ElementName=Panorama}" CommandParameter="{Binding}" />
                                             </i:EventTrigger>
                                         </i:Interaction.Triggers>
                                     </Grid>

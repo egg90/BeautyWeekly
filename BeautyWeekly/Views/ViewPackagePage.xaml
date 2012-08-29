@@ -6,6 +6,7 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
@@ -18,7 +19,7 @@
 
     <!--LayoutRoot contains the root grid where all other page content is placed-->
     <Grid x:Name="LayoutRoot">
-        <StackPanel>
+        <StackPanel x:Name="MainPanel">
             <TextBlock Text="清纯美女 第12期" Margin="20" FontSize="36" />
             <ListBox toolkit:TiltEffect.IsTiltEnabled="True" ItemsSource="{Binding PictureGroups}" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Transparent" Height="710" Width="480">
                 <ListBox.ItemsPanel>
@@ -29,7 +30,7 @@
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
-                            <Button Command="{Binding comm}" Margin="6" Template="{StaticResource EmptyButtonTemplate}" Height="210" Width="210">
+                            <Button Margin="6" Template="{StaticResource EmptyButtonTemplate}" Height="210" Width="210">
                                 <Grid>
                                     <Image Source="{Binding Path=MainPicture}" />
                                     <Border VerticalAlignment="Bottom" Height="45">
@@ -40,6 +41,11 @@
                                     </Border>
                                 </Grid>
                             </Button>
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Tap">
+                                    <i:InvokeCommandAction Command="{Binding DataContext.PictureGroupListTapCommand, ElementName=MainPanel}" CommandParameter="{Binding}" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

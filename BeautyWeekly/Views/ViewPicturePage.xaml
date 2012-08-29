@@ -35,11 +35,9 @@
             <controls:Pivot.ItemTemplate>
                 <DataTemplate>
                     <controls:PivotItem x:Name="PhotoPivotItem" Margin="0" Padding="0">
-                        <phone:WebBrowser Source="{Binding}" />
-                        <!--
+                        <!--<phone:WebBrowser Source="{Binding}" />-->
                         <Image x:Name="PhotoPicture" Source="{Binding}" Stretch="Uniform" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0">
                         </Image>
-                        -->
                     </controls:PivotItem>
                 </DataTemplate>
             </controls:Pivot.ItemTemplate>
