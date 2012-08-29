@@ -17,8 +17,16 @@ namespace BeautyWeekly.Models
     /// <summary>
     /// Package Model
     /// </summary>
+    [Table]
     public class Package : ModelBase<Package>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Package"/> class.
+        /// </summary>
+        public Package()
+        {
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Package"/> class.
         /// </summary>
@@ -47,6 +55,7 @@ namespace BeautyWeekly.Models
         /// <value>
         /// The title.
         /// </value>
+        [Column(CanBeNull = false)]
         public string Title { get; set; }
 
         /// <summary>
@@ -55,6 +64,7 @@ namespace BeautyWeekly.Models
         /// <value>
         /// The main picture.
         /// </value>
+        [Column(CanBeNull = true)]
         public string MainPicture { get; set; }
 
         /// <summary>

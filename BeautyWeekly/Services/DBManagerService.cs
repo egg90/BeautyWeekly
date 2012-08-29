@@ -10,6 +10,7 @@ namespace BeautyWeekly.Services
     using System;
     using System.Collections;
     using System.Collections.Generic;
+    using System.Data.Linq;
     using System.Linq;
     using System.Windows;
     using BeautyWeekly.Models;
@@ -39,12 +40,13 @@ namespace BeautyWeekly.Services
         /// </returns>
         public IList<Package> GetPackages()
         {
-            this.CreateDBIfNotExist();
             lock (this.dataContextLock)
             {
-                using (var dataContext = new AppDataContext())
+                this.CreateDBIfNotExist();
+                using (var dataContext = new DBContext())
                 {
-                    return dataContext.Packages.OrderByDescending(m => m.CreateTime).ToList();
+                    Table<Package> table = dataContext.Packages;
+                    return table.ToList();
                 }
             }
         }
@@ -56,7 +58,7 @@ namespace BeautyWeekly.Services
         {
             lock (this.dataContextLock)
             {
-                using (var dataContext = new AppDataContext())
+                using (var dataContext = new DBContext())
                 {
                     if (!dataContext.DatabaseExists())
                     {

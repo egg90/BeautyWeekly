@@ -78,7 +78,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="LocalizedStrings.cs" />
-    <Compile Include="Models\AppDataContext.cs" />
+    <Compile Include="Models\DBContext.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\PictureGroup.cs" />
     <Compile Include="Models\Package.cs" />

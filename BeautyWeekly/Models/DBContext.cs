@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="AppDataContext.cs" company="eggfly">
+// <copyright file="DBContext.cs" company="eggfly">
 //     Copyright (c) eggfly. All rights reserved.
 // </copyright>
 // <author>eggfly</author>
@@ -11,9 +11,9 @@ namespace BeautyWeekly.Models
     using System.Data.Linq;
 
     /// <summary>
-    /// App DataContext
+    /// Database Context
     /// </summary>
-    public class AppDataContext : DataContext
+    public class DBContext : DataContext
     {
         /// <summary>
         /// database connection string
@@ -21,9 +21,9 @@ namespace BeautyWeekly.Models
         public const string DBConnectionString = "Data Source=isostore:/Database.sdf";
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AppDataContext"/> class.
+        /// Initializes a new instance of the <see cref="DBContext"/> class.
         /// </summary>
-        public AppDataContext()
+        public DBContext()
             : base(DBConnectionString)
         {
         }
