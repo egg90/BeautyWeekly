@@ -83,6 +83,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\DBContext.cs" />
+    <Compile Include="Models\PackageManager.cs" />
     <Compile Include="Models\PictureGroup.cs" />
     <Compile Include="Models\Package.cs" />
     <Compile Include="Resources\AppResources.Designer.cs">
@@ -178,7 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\AppResources.zh-TW.resx" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Common\" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
   <Import Project="..\Tools\StyleCop\StyleCop.targets" />

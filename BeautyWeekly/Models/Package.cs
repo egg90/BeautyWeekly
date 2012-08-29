@@ -41,15 +41,6 @@ namespace BeautyWeekly.Models
         }
 
         /// <summary>
-        /// Gets or sets the id.
-        /// </summary>
-        /// <value>
-        /// The id.
-        /// </value>
-        [Column(IsPrimaryKey = true, IsDbGenerated = true, DbType = "INT NOT NULL Identity", CanBeNull = false, AutoSync = AutoSync.OnInsert)]
-        public int Id { get; set; }
-
-        /// <summary>
         /// Gets or sets the package id.
         /// </summary>
         /// <value>
@@ -128,6 +119,15 @@ namespace BeautyWeekly.Models
         [Column]
         [DataMember]
         public DateTime CreateTime { get; set; }
+
+        /// <summary>
+        /// Gets or sets the id.
+        /// </summary>
+        /// <value>
+        /// The id.
+        /// </value>
+        [Column(IsPrimaryKey = true, IsDbGenerated = true, DbType = "INT NOT NULL Identity", CanBeNull = false, AutoSync = AutoSync.OnInsert)]
+        private int Id { get; set; }
 
         /// <summary>
         /// Gets or sets the picture groups json.

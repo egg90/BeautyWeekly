@@ -79,6 +79,15 @@ namespace BeautyWeekly.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Charm Girls 的本地化字符串。
+        /// </summary>
+        public static string CharmCategory {
+            get {
+                return ResourceManager.GetString("CharmCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Are you sure to exit? 的本地化字符串。
         /// </summary>
         public static string ExitMessage {
@@ -93,6 +102,15 @@ namespace BeautyWeekly.Resources {
         public static string Like {
             get {
                 return ResourceManager.GetString("Like", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Pure Girls 的本地化字符串。
+        /// </summary>
+        public static string PureCategory {
+            get {
+                return ResourceManager.GetString("PureCategory", resourceCulture);
             }
         }
     }

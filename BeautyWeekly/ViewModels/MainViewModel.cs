@@ -153,14 +153,15 @@ namespace BeautyWeekly.ViewModel
         /// </summary>
         private void TestDumpInternalPackages()
         {
-            var l = new List<Package>
-            {
-                new Package { Title = "Charm(2012.8.15)", MainPicture = "/Pictures/2-7.jpg", CreateTime = DateTime.Now, Category = "Charm" },
-                new Package { Title = "Charm(2012.8.22)", MainPicture = "/Pictures/1-4.png", CreateTime = DateTime.Now, Category = "Charm" },
-                new Package { Title = "Charm(2012.8.15)", MainPicture = "/Pictures/2-7.jpg", CreateTime = DateTime.Now, Category = "Pure" },
-                new Package { Title = "Charm(2012.8.22)", MainPicture = "/Pictures/1-4.png", CreateTime = DateTime.Now, Category = "Pure" },
-            };
+            ////var l = new List<Package>
+            ////{
+            ////    new Package { Title = "Charm(2012.8.15)", MainPicture = "/Pictures/2-7.jpg", CreateTime = DateTime.Now, Category = "Charm" },
+            ////    new Package { Title = "Charm(2012.8.22)", MainPicture = "/Pictures/1-4.png", CreateTime = DateTime.Now, Category = "Charm" },
+            ////    new Package { Title = "Charm(2012.8.15)", MainPicture = "/Pictures/2-7.jpg", CreateTime = DateTime.Now, Category = "Pure" },
+            ////    new Package { Title = "Charm(2012.8.22)", MainPicture = "/Pictures/1-4.png", CreateTime = DateTime.Now, Category = "Pure" },
+            ////};
 
+            var l = new PackageManager().InternalPackages;
             var d = new Dictionary<string, object>();
             d.Add("InternalPackages", l);
             string packages = JsonConvert.SerializeObject(d);

@@ -123,10 +123,18 @@
   <data name="ApplicationName" xml:space="preserve">
     <value>陽光美女周刊</value>
   </data>
+  <data name="CharmCategory" xml:space="preserve">
+    <value>魅惑私房</value>
+    <comment>todo</comment>
+  </data>
   <data name="ExitMessage" xml:space="preserve">
     <value>確認退出陽光美女周刊？</value>
   </data>
   <data name="Like" xml:space="preserve">
     <value>喜歡</value>
+  </data>
+  <data name="PureCategory" xml:space="preserve">
+    <value>清纯写真</value>
+    <comment>todo</comment>
   </data>
 </root>
