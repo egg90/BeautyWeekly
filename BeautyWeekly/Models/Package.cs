@@ -41,25 +41,6 @@ namespace BeautyWeekly.Models
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Package"/> class.
-        /// </summary>
-        /// <param name="title">The title.</param>
-        /// <param name="mainPicture">The main picture.</param>
-        /// <param name="pictureGroups">The picture groups.</param>
-        /// <param name="isInternal">if set to <c>true</c> [is internal].</param>
-        public Package(string title, string mainPicture, List<PictureGroup> pictureGroups = null, bool isInternal = false)
-        {
-            this.Title = title;
-            this.MainPicture = mainPicture;
-            if (pictureGroups != null)
-            {
-                this.PictureGroups = pictureGroups;
-            }
-
-            this.IsInternal = isInternal;
-        }
-
-        /// <summary>
         /// Gets or sets the id.
         /// </summary>
         /// <value>
@@ -127,27 +108,6 @@ namespace BeautyWeekly.Models
                 this.pictureGroupsJson = JsonConvert.SerializeObject(value);
             }
         }
-
-        /// <summary>
-        /// Gets or sets the picture groups json.
-        /// </summary>
-        /// <value>
-        /// The picture groups json.
-        /// </value>
-        [Column]
-        public string PictureGroupsJson
-        {
-            get
-            {
-                return this.pictureGroupsJson;
-            }
-
-            set
-            {
-                this.pictureGroupsJson = value;
-                this.pictureGroups = JsonConvert.DeserializeObject<List<PictureGroup>>(value);
-            }
-        }
         
         /// <summary>
         /// Gets or sets a value indicating whether this instance is internal.
@@ -168,6 +128,27 @@ namespace BeautyWeekly.Models
         [Column]
         [DataMember]
         public DateTime CreateTime { get; set; }
+
+        /// <summary>
+        /// Gets or sets the picture groups json.
+        /// </summary>
+        /// <value>
+        /// The picture groups json.
+        /// </value>
+        [Column]
+        private string PictureGroupsJson
+        {
+            get
+            {
+                return this.pictureGroupsJson;
+            }
+
+            set
+            {
+                this.pictureGroupsJson = value;
+                this.pictureGroups = JsonConvert.DeserializeObject<List<PictureGroup>>(value);
+            }
+        }
 
         /// <summary>
         /// Copies from.
