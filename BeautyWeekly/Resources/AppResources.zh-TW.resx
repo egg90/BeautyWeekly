@@ -125,7 +125,9 @@
   </data>
   <data name="CharmCategory" xml:space="preserve">
     <value>魅惑私房</value>
-    <comment>todo</comment>
+  </data>
+  <data name="ConfirmationTitle" xml:space="preserve">
+    <value>確認</value>
   </data>
   <data name="ExitMessage" xml:space="preserve">
     <value>確認退出陽光美女周刊？</value>
@@ -134,7 +136,6 @@
     <value>喜歡</value>
   </data>
   <data name="PureCategory" xml:space="preserve">
-    <value>清纯写真</value>
-    <comment>todo</comment>
+    <value>清純寫真</value>
   </data>
 </root>

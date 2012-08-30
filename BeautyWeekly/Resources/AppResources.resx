@@ -126,6 +126,9 @@
   <data name="CharmCategory" xml:space="preserve">
     <value>Charm Girls</value>
   </data>
+  <data name="ConfirmationTitle" xml:space="preserve">
+    <value>Confirmation</value>
+  </data>
   <data name="ExitMessage" xml:space="preserve">
     <value>Are you sure to exit?</value>
   </data>
