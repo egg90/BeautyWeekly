@@ -97,11 +97,11 @@ namespace BeautyWeekly.ViewModel
         /// <summary>
         /// Called when [package list box tap].
         /// </summary>
-        /// <param name="args">The args.</param>
-        public void OnPackageListBoxTap(Package args)
+        /// <param name="package">The package.</param>
+        public void OnPackageListBoxTap(Package package)
         {
             //// ServiceLocator.Get<ICommonUIService>().ShowMessageBox(args.ToString(), "title");
-            string target = string.Format("/Views/ViewPackagePage.xaml?id={0}", 0);
+            string target = string.Format("/Views/ViewPackagePage.xaml?id={0}", package.PackageId);
             ServiceLocator.Get<INavigator>().NavigateTo(target);
         }
 
