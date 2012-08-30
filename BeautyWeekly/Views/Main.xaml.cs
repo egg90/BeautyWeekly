@@ -42,7 +42,7 @@ namespace BeautyWeekly.Views
         /// <param name="e">Set e.Cancel to true to indicate that the request was handled by the application.</param>
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
-            MessageBoxResult result = ServiceLocator.Get<ICommonUIService>().ShowMessageBox(AppResources.ExitMessage, string.Empty, true);
+            MessageBoxResult result = ServiceLocator.Get<ICommonUIService>().ShowMessageBox(AppResources.ExitMessage, AppResources.ConfirmationTitle, true);
             if (result != MessageBoxResult.None && result == MessageBoxResult.OK)
             {
                 base.OnBackKeyPress(e);
