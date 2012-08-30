@@ -161,21 +161,7 @@ namespace BeautyWeekly.ViewModel
             ////    new Package { Title = "Charm(2012.8.22)", MainPicture = "/Pictures/1-4.png", CreateTime = DateTime.Now, Category = "Pure" },
             ////};
 
-            var l = new PackageManager().InternalPackages;
-            var d = new Dictionary<string, object>();
-            d.Add("InternalPackages", l);
-            string packages = JsonConvert.SerializeObject(d);
-
-            using (IsolatedStorageFile file = IsolatedStorageFile.GetUserStoreForApplication())
-            {
-                using (var isoFileStream = new IsolatedStorageFileStream("test.json", System.IO.FileMode.OpenOrCreate, file))
-                {
-                    using (var writer = new StreamWriter(isoFileStream))
-                    {
-                        writer.Write(packages);
-                    }
-                }
-            }
+            new PackageManager().DumpInternalPackages();
         }
 
         /// <summary>
@@ -183,44 +169,8 @@ namespace BeautyWeekly.ViewModel
         /// </summary>
         private void TestLoadInternalPackages()
         {
-            string jstr;
-            using (IsolatedStorageFile file = IsolatedStorageFile.GetUserStoreForApplication())
-            {
-                using (var isoFileStream = new IsolatedStorageFileStream("test.json", System.IO.FileMode.OpenOrCreate, file))
-                {
-                    using (var writer = new StreamReader(isoFileStream))
-                    {
-                        jstr = writer.ReadToEnd();
-                    }
-                }
-            }
-            
-            var json = JObject.Parse(jstr);
-            jstr = json["InternalPackages"].ToString();
-
-            var packages = JsonConvert.DeserializeObject<List<Package>>(jstr);
-
-            var categories = new Dictionary<string, List<Package>>();
-
-            foreach (var package in packages)
-            {
-                if (categories.ContainsKey(package.Category))
-                {
-                    categories[package.Category].Add(package);
-                }
-                else
-                {
-                    categories.Add(package.Category, new List<Package> { package, });
-                }
-            }
-
-            List<Category> categoryList = new List<Category>();
-            foreach (var pair in categories)
-            {
-                categoryList.Add(new Category(pair.Key, new List<Package>(pair.Value)));
-            }
-
-            this.Categories = categoryList;
+            var packageManager = new PackageManager();
+            this.Categories = packageManager.PackagesToCategories(packageManager.InternalPackages);
         }
 
         #endregion
